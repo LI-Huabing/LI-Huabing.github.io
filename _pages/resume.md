@@ -7,8 +7,6 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
 ![CV](/images/CV(1).png)
 
 ![CV](/images/CV(2).png)

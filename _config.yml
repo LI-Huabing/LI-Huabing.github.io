@@ -109,6 +109,10 @@ author:
   bio              : "Bachelor of Economics, Law (Minor), Engineering (Minor), and Management (Minor) of Renmin University of China; Current Master Student of European Master of Law & Economics in Hamburg, Ghent, Rotterdam and Barcelona"
   location         : "China & Europe"
   email            : "email@huabing.li"
+link:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.huabing.li"
 
 
 # Reading Files

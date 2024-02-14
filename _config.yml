@@ -119,8 +119,6 @@ link:
 include:
   - .htaccess
   - _pages
-  - docs
-  - files
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"

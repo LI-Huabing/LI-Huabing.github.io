@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "Hi! I am Huabing Li!"
 permalink: /
 author_profile: true

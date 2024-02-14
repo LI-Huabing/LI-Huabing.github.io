@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: single
 title: "您好！我叫李化冰！"
 permalink: /cn/
 author_profile: true

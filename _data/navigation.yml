@@ -1,5 +1,8 @@
 # main links
 main:
+  - title: "Apologies for emergency"
+    url: /Apologies/
+
   - title: "Resume"
     url: /resume/
 

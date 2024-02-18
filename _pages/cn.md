@@ -5,7 +5,7 @@ permalink: /cn/
 author_profile: true
 ---
 
-您好！我叫李化冰！[huabing.li](https://www.huabing.li/cn)是我的个人网站，在这里，我以英文提供了我的[基本简历](https://www.huabing.li/resume)和[学术成果](https://www.huabing.li/publications)。当然，本页面以中文提供了以上信息的概要，希望能增进您对我的了解。如您需要英文或德文版本的页面，请点击[English](https://www.huabing.li/en)或[Deutsch](https://www.huabing.li/de)，更多语言版本的网站正在建设当中。
+您好！我叫李化冰！在国外，为了读音简便，我也习惯朋友们叫我Bing。[huabing.li](https://www.huabing.li/cn)是我的个人网站，在这里，我以英文提供了我的[基本简历](https://www.huabing.li/resume)和[学术成果](https://www.huabing.li/publications)。当然，本页面以中文提供了以上信息的概要，希望能增进您对我的了解。如您需要英文或德文版本的页面，请点击[English](https://www.huabing.li/en)或[Deutsch](https://www.huabing.li/de)，更多语言版本的网站正在建设当中。
 
 在过去的四年里，我在[中国人民大学](https://www.ruc.edu.cn/)度过了美好的四年本科时光。我主修贸易经济专业，辅修法学、计算机科学与技术和财务管理专业，因而以经济学学士学位、法学辅修学士学位、工学辅修学士学位、管理学辅修学士学位从中国人民大学毕业。
 

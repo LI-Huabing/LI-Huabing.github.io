@@ -3,6 +3,7 @@ layout: single
 title: "Hi! I am Huabing Li!"
 permalink: /en/
 author_profile: true
+classes: wide
 ---
 
 Hi! I am Huabing Li, and to make it easier to read, I also love it when my friends call me Bing. This is my personal website [huabing.li](https://www.huabing.li/en). I am honored to be able to present my [basic information](https://www.huabing.li/resume) and [academic achievements](https://www.huabing.li/publications) to you through such a medium. If you need the Chinese version or the German version of the webpage, please click [中文](https://www.huabing.li/cn) or [Deutsch](https://www.huabing.li/de) to view. More language versions are under construction.

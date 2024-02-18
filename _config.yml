@@ -117,7 +117,7 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LI-Huabing"
     - label: "ORCID"
-      icon: "fab fa-orcid"
+      icon: "fa-solid fa-user-graduate"
       url: "https://orcid.org/my-orcid?orcid=0000-0003-4875-3258"
       
 

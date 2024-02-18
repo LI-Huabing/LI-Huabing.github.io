@@ -3,6 +3,7 @@ layout: single
 title: "Hallo! Ich bin Huabing Li!"
 permalink: /de/
 author_profile: true
+classes: wide
 ---
 
 Hallo! Ich bin Huabing Li, und damit es leichter zu lesen ist, liebe ich es auch, wenn meine Freunde mich Bing nennen. [huabing.li](https://www.huabing.li/de) ist meine persönliche Website. Hier biete ich meine [Grundinformationen](https://www.huabing.li/resume) und [wissenschaftlichen Leistungen](https://www.huabing.li/publications) in Englisch an. Wenn Sie eine englische oder chinesische Version der Seite benötigen, klicken Sie bitte auf [English](https://www.huabing.li/en) oder [中文](https://www.huabing.li/cn). Weitere Sprachversionen der Website befinden sich derzeit in der Entwicklung.

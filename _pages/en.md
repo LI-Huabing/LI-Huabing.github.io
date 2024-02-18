@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Hi! I am Huabing Li!"
-permalink: /en
+permalink: /en/
 author_profile: true
 ---
 

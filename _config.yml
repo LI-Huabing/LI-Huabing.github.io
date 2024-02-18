@@ -12,10 +12,10 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "en-GB"
 title                    : "Huabing Li"
 title_separator          : "-"
 subtitle                 : "www.huabing.li"
@@ -24,8 +24,8 @@ description              : "Huabing Li graduated from Renmin University of China
 url                      : "https://www.huabing.li"
 baseurl                  : ""
 repository               : "Li-Huabing/LI-Huabing.github.io"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+teaser                   : "/images/profile.png"
+logo                     : "/images/profile.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -106,10 +106,16 @@ analytics:
 author:
   name             : "Huabing Li"
   avatar           : "/images/profile.png"
-  bio              : "BEcon, LLB, BEng, and BBA in RUC; Current EMLE student."
+  bio              : "BEcon, LLB, BEng, and BBA in RUC; LLM in EMLE."
   location         : "China & Europe"
   email            : "email@huabing.li"
-
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://huabing.li"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/LI-Huabing"
 
 # Reading Files
 include:

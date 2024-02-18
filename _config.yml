@@ -20,9 +20,9 @@ title                    : "Huabing Li"
 title_separator          : "-"
 subtitle                 : "www.huabing.li"
 name                     : "Huabing Li"
-description              : "My personal website at www.huabing.li. Huabing Li graduated from Renmin University of China with Bachelors of Economics, Law (minor), Engineering (minor) and Management (minor), and he is a current master student of European Master in Law and Economics, fully funded by Erasmus Mundus scholarship."
+description              : "Huabing Li graduated from Renmin University of China with Bachelors of Economics, Law (minor), Engineering (minor) and Management (minor), and he is a current master student of European Master in Law and Economics, fully funded by Erasmus Mundus scholarship."
 url                      : "https://www.huabing.li"
-baseurl                  : "/"
+baseurl                  : "/en"
 repository               : "Li-Huabing/LI-Huabing.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -109,10 +109,6 @@ author:
   bio              : "Bachelor of Economics, Law (Minor), Engineering (Minor), and Management (Minor) of Renmin University of China; Current Master Student of European Master of Law & Economics in Hamburg, Ghent, Rotterdam and Barcelona"
   location         : "China & Europe"
   email            : "email@huabing.li"
-link:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://www.huabing.li"
 
 
 # Reading Files

@@ -1,16 +1,10 @@
 # main links
 main:
-  - title: "Apologies for emergency"
-    url: /apologies/
-
   - title: "Resume"
     url: /resume/
 
   - title: "Publications"
     url: /publications/   
-        
-  - title: "Blogs"
-    url: /blogs/
 
   - title: "🇨🇳 中文"
     url: /cn/

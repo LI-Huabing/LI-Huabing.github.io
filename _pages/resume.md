@@ -3,8 +3,6 @@ layout: single
 title: "Resume"
 permalink: /resume/
 author_profile: true
-redirect_from:
-  - /resume
 ---
 
 ![CV](/images/CV(1).png)

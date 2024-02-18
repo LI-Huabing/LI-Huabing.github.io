@@ -3,8 +3,6 @@ layout: single
 title: "Hi! I am Huabing Li!"
 permalink: /en
 author_profile: true
-redirect_from:
-  - /
 ---
 
 Hi! I am Huabing Li, and this is my personal website [huabing.li](https://www.huabing.li). I am honored to be able to present my [basic information](https://www.huabing.li/resume), [academic achievements](https://www.huabing.li/publications), [talks and presentations](https://www.huabing.li/talks), and [personal blogs](https://www.huabing.li/blogs) to you through such a medium. If you need the Chinese version or the German version of the webpage, please click [中文](https://www.huabing.li/cn) or [Deutsch](https://www.huabing.li/de) to view. More language versions are under construction.

@@ -5,7 +5,7 @@ permalink: /en
 author_profile: true
 ---
 
-Hi! I am Huabing Li, and this is my personal website [huabing.li](https://www.huabing.li). I am honored to be able to present my [basic information](https://www.huabing.li/resume), [academic achievements](https://www.huabing.li/publications), [talks and presentations](https://www.huabing.li/talks), and [personal blogs](https://www.huabing.li/blogs) to you through such a medium. If you need the Chinese version or the German version of the webpage, please click [中文](https://www.huabing.li/cn) or [Deutsch](https://www.huabing.li/de) to view. More language versions are under construction.
+Hi! I am Huabing Li, and this is my personal website [huabing.li](https://www.huabing.li/en). I am honored to be able to present my [basic information](https://www.huabing.li/resume) and [academic achievements](https://www.huabing.li/publications) to you through such a medium. If you need the Chinese version or the German version of the webpage, please click [中文](https://www.huabing.li/cn) or [Deutsch](https://www.huabing.li/de) to view. More language versions are under construction.
 
 I spent four years as an undergraduate at [Renmin University of China](https://en.ruc.edu.cn/) (abbreviated as RUC, which is the top-ranked university in China in humanities and social sciences) and obtained my bachelor's degrees. I majored in Trade and Economics and minored in Law, Computer Science and Technology, and Financial Management, so I graduated with Bachelor of Economics, Law (Minor), Engineering (Minor), and Management (Minor).
 

@@ -1,13 +1,17 @@
 # main links
 main:
-  - title: "Resume"
-    url: /resume/
-
-  - title: "Publications"
-    url: /publications/   
+  - title: "🇬🇧 English"
+    url: /en/
 
   - title: "🇨🇳 中文"
     url: /cn/
 
   - title: "🇩🇪 Deutsch"
     url: /de/
+
+  - title: "Resume"
+    url: /resume/
+
+  - title: "Publications"
+    url: /publications/   
+

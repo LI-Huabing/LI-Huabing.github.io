@@ -1,12 +1,12 @@
 # main links
 main:
-  - title: "🇬🇧 English"
+  - title: "🇬🇧 Welcome"
     url: /en/
 
-  - title: "🇨🇳 中文"
+  - title: "🇨🇳 欢迎"
     url: /cn/
 
-  - title: "🇩🇪 Deutsch"
+  - title: "🇩🇪 Willkommen"
     url: /de/
 
   - title: "Resume"

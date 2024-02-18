@@ -24,8 +24,8 @@ description              : "Huabing Li graduated from Renmin University of China
 url                      : "https://www.huabing.li"
 baseurl                  : ""
 repository               : "Li-Huabing/LI-Huabing.github.io"
-teaser                   : "/images/profile.png"
-logo                     : "/images/profile.png"
+teaser                   : 
+logo                     : 
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200

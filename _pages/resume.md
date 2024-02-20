@@ -6,7 +6,7 @@ author_profile: true
 classes: wide
 ---
 
-<iframe src="/files/CV.pdf" style="height: 100%; width: 100%;">
+<iframe src="/files/CV.pdf" style="height: 80vh; width: 100%;">
  
 This browser does not support PDFs. Please download it at below link.
  

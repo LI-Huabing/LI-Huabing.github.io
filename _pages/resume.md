@@ -6,10 +6,10 @@ author_profile: true
 classes: wide
 ---
 
-![CV](/images/CV(1).png)
-
-![CV](/images/CV(2).png)
-
-![CV](/images/CV(3).png)
+<iframe src="/files/CV.pdf">
+ 
+This browser does not support PDFs. Please download it at below link.
+ 
+</iframe>
 
 [Download CV here](http://huabing.li/files/CV.pdf)

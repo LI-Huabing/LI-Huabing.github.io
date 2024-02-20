@@ -12,7 +12,7 @@ I spent four years as an undergraduate at [Renmin University of China](https://e
 
 Now, I am doing my joint master's degree ([European Master of Law & Economics](https://www.emle.org/)) in Hamburg, Ghent, Rotterdam and Barcelona under the full funding of Erasmus scholarship from European Union. My complex disciplinary background makes me very interested in cross-disciplinary research, especially topics related to the intersection of economics and law, as well as the intersection of law and big data and artificial intelligence. 
 
-I think that a song can represent my attitude towards academic research and even life: it is a song in the German classic musical "Mozart" called "Gold on the Stars". The lyrics wrote:
+I think that a song can represent my attitude towards academic research and even life: it is a song in the German classic musical "Mozart" called "Gold falls from heaven". The lyrics wrote:
 
 > Manchmal nachts fällt (Somewhere out there) / Gold von den Sternen (Gold falls from heaven) / Du kannst es finden (You are going to find it) / Da draußen, wo noch keiner war (You are born to lighten up this world) / Sein heißt Werden (Dare to try) / Leben heißen Lernen (And reach out for heaven) / Wenn du das Gold von den Sternen suchst (You must become what you are meant to be) / Muss du allein hinaus in die Gefahr (And bring the gold of heaven to the world)
 

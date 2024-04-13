@@ -10,7 +10,7 @@ Hi! I am Huabing Li, and to make it easier to read, I also love it when my frien
 
 I spent four years as an undergraduate at [Renmin University of China](https://en.ruc.edu.cn/) (abbreviated as RUC, which is the top-ranked university in China in humanities and social sciences) and obtained my bachelor's degrees. I majored in Trade and Economics and minored in Law, Computer Science and Technology, and Financial Management, so I graduated with Bachelor of Economics, Law (Minor), Engineering (Minor), and Management (Minor).
 
-Now, I am doing my joint master's degree ([European Master of Law & Economics](https://www.emle.org/)) in Hamburg, Ghent, Rotterdam and Barcelona under the full funding of Erasmus scholarship from European Union. My complex disciplinary background makes me very interested in cross-disciplinary research, especially topics related to the intersection of economics and law, as well as the intersection of law and big data and artificial intelligence. 
+Now, I am doing my joint master's degree ([European Master in Law & Economics](https://www.emle.org/)) in Hamburg, Ghent, Rotterdam and Barcelona under the full funding of Erasmus scholarship from European Union. My complex disciplinary background makes me very interested in cross-disciplinary research, especially topics related to the intersection of economics and law, as well as the intersection of law and big data and artificial intelligence. 
 
 I think that a song can represent my attitude towards academic research and even life: it is a song in the German classic musical "Mozart" called "Gold falls from heaven". The lyrics wrote:
 

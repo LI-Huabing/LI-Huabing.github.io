@@ -1,54 +1,121 @@
-primary_name: "Your Name"
+primary_name: "Huabing Li"
 secondary_name: ""
-navbar_name: "Your Name"
+navbar_name: "Huabing Li"
 
-positions:
-- logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-  name: Position 1 with logo
-- name: Position 2 without logo
-
-
-email: "your@email.com"
-# cv_link: link-to-your-cv-file
-gscholar: your_google_scholar_id
-github: your_github_id
-twitter: your_twitter_id
-# wechat_qrcode: /assets/images/etc/wechat.jpg
-# wechat_prompt: >-
-#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
-# linkedin: your-linked-in-id
-# orcid: 0000-0000-0000-0000
+email: "email@huabing.li"
+resume: /assets/files/CV.pdf
+# gscholar: your_google_scholar_id
+github: LI-Huabing
+wechat_qrcode: /assets/images/etc/wechat.jpg
+wechat_prompt: >-
+  Please kindly tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+linkedin: huabingli
+orcid: 0000-0003-4875-3258
 
 short_bio: >-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-  </p>
+  I am currently a PhD candidate at <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>, <a href="https://www.unibo.it/en/homepage">University of Bologna</a> and <a href="https://www.eur.nl/en">Erasmus University Rotterdam</a> under <a href="https://edle-phd.eu/">European Doctorate in Law and Economics (EDLE)</a> program, supervised by <a href="https://www.roeesarel.com/">Prof. Dr. Roee Sarel</a>.
+  <br>
+  My main research interests are in law and economics, including empirical legal research, applied game theory and experimental economics. I firmly believe that only exchanges between disciplines and scholars can lead to creations so that you are always welcome to contact me for academic discussions and collaborations!
 
-portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+show_portrait: true
+portrait_url: /assets/images/photos/portrait.png
 
 education:
-- name: Massachusetts Institute of Technology
-  logo: /assets/images/badges/MIT_Social_circle.png
-  position: Ph.D. Student in Computer Science
-  date: Sep. 2024 - present
+- name: University of Hamburg
+  logo: /assets/images/badges/UHH.png
+  position: PhD candidate in Law and Economics
+  date: Oct 2024 - present
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+- name: University of Bologna
+  logo: /assets/images/badges/Unibo.png
+  position: PhD candidate in Law and Economics
+  date: Oct 2024 - present
 
+- name: Erasmus University Rotterdam
+  logo: /assets/images/badges/EUR.png
+  position: PhD candidate in Law and Economics
+  date: Oct 2024 - present
+
+- name: Erasmus University Rotterdam
+  logo: /assets/images/badges/EUR.png
+  position: Joint LLM in Law and Economics
+  date: Oct 2023 - Sep 2024
+
+- name: Pompeu Fabra University
+  logo: /assets/images/badges/UPF.png
+  position: Joint LLM in Law and Economics
+  date: Apr 2024 - Sep 2024
+
+- name: Ghent University
+  logo: /assets/images/badges/UGent.png
+  position: Joint LLM in Law and Economics
+  date: Jan 2024 - Mar 2024
+
+- name: University of Hamburg
+  logo: /assets/images/badges/UHH.png
+  position: Joint LLM in Law and Economics
+  date: Oct 2023 - Dec 2023
+
+- name: Renmin University of China
+  logo: /assets/images/badges/RUC.png
+  position: Bachelor of Economics in Trade and Economics (major)
+  date: Sep 2019 - Jun 2023
+
+- name: Renmin University of China
+  logo: /assets/images/badges/RUC.png
+  position: Bachelor of Law in Law (minor)
+  date: Sep 2019 - Jun 2023
+
+- name: Renmin University of China
+  logo: /assets/images/badges/RUC.png
+  position: Bachelor of Engineering in Computer Science (minor)
+  date: Sep 2019 - Jun 2023
+
+- name: Renmin University of China
+  logo: /assets/images/badges/RUC.png
+  position: Bachelor of Management in Financial Management (minor)
+  date: Sep 2019 - Jun 2023
+
+experience:
+- name: RUC National Academy of Development and Strategy
+  logo: /assets/images/badges/NADS.jpg
+  position: Internship researcher
+  date: 2021 - 2022
+- name: RUC Legal Aid Center
+  logo: /assets/images/badges/LAC.png
+  position: Internship researcher
+  date: 2021 - 2022
+- name: Frontier Institute of Regulation and Supervision Technology
+  logo: /assets/images/badges/FIRST.jpg
+  position: Internship researcher
+  date: 2021
 
 awards:
-- name: Award Name 2
+- name: DAAD Graduate School Full Scholarship
+  date: 2024 - 2028
+- name: Erasmus Mundus Full Scholarship
+  date: 2023 - 2024
+- name: China National Inspirational Scholarship
+  date: 2022
+- name: Finalist prize in the American Mathematical Contest in Modelling
+  date: 2022
+- name: First prize in the RUC “Innovation Cup” Academic Competition
+  date: 2022
+- name: RUC Outstanding Youth League Member
+  date: 2021, 2022
+- name: Second prize in the Beijing region of the Mathematical Modelling Competition
+  date: 2021
+- name: RUC Legal Aid Center Outstanding Volunteer
+  date: 2019, 2020, 2021
+- name: RUC Honorary Individual in the Fight Against the Covid-19 Epidemic
+  date: 2020
+- name: RUC Scholarship for Social Contribution and Volunteerism
+  date: 2020
+- name: RUC Scholarship for Academic Progress
+  date: 2020
+
+service:
+- name: Editor and anonymous reviewer of Chaoyang Law Review
+  date: 2022 - present
+- name: Anonymous reviewer of Crime, Law and Social Change
   date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021

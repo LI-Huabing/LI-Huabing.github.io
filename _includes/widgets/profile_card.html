@@ -4,29 +4,21 @@
             <div class="card-body p-5">
                 <div class="row">
                     <div class="col">
-                        <div class="h1 font-weight-normal">
-                            {{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small>
-                        </div>
-                        <div class="text-profile-position">
+                        <p class="h1 font-weight-normal">{{ site.data.profile.primary_name }} <small>{{ site.data.profile.secondary_name }}</small></p>
+                        <p class="text-profile-position">
                             {% for position in site.data.profile.positions %}
-                            {% if position.logo -%}
-                            <img src="{{ position.logo | relative_url }}" alt="Logo" class="inline-badge"/>
-                            {%- endif %}
-                            {{ position.name }}<br/>
+                            {{ position }}<br/>
                             {% endfor %}
-                        </div>
-                        <div class="text-profile-bio mt-3">
+                        </p>
+                        <p class="text-profile-bio">
                             {{ site.data.profile.short_bio }}
-                        </div>
-                        {% if site.data.profile.cv_link %}
-                            <a target="_blank" href="{{ site.data.profile.cv_link }}"><i class="fas fa-file-alt"></i> Curriculum Vitae</a> <br/>
-                        {% endif %}
+                        </p>
                     </div>
-                    {% if site.data.profile.portrait_url %}
-                    <div class="col-md-auto">
+                    {% if site.data.profile.show_portrait %}
+                    <div class="col-md-auto d-none d-md-block">
                         <figure class="figure">
                             <img 
-                                src="{{ site.data.profile.portrait_url | relative_url }}" 
+                                src="{{ site.data.profile.portrait_url }}" 
                                 class="figure-img img-fluid img-thumbnail" 
                                 style="height: 200px;"
                                 data-toggle="tooltip" 
@@ -43,19 +35,25 @@
                 <div class="row">
                     <div class="col">
                         <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
+                            <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email }}</span>
                         </a>
 
                         {% if site.data.profile.gscholar %}
                         <a class="pr-3 no-break" target="_blank" href="https://scholar.google.com/citations?user={{ site.data.profile.gscholar }}&hl=en">
-                            <i class="fab fa-google-scholar"></i> Google Scholar
+                            <i class="fab fa-google"></i> Google Scholar
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.sscholar %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.semanticscholar.org/author/{{ site.data.profile.sscholar }}">
+                            <i class="fa fa-book"></i> Semantic Scholar
                         </a>
                         {% endif %}
                         
                         {% if site.data.profile.github %}
                         <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
                             <i class="fab fa-github"></i> GitHub
-                        </a>
+                        </a> 
                         {% endif %}
 
                         {% if site.data.profile.wechat_qrcode %}
@@ -67,6 +65,18 @@
                         {% if site.data.profile.twitter %}
                         <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
                             <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.zhihu %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.zhihu.com/people/{{ site.data.profile.zhihu }}">
+                            <i class="fab fa-zhihu"></i> ZhiHu
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.resume %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.huabing.li{{ site.data.profile.resume }}">
+                            <i class="fa fa-file"></i> CV
                         </a>
                         {% endif %}
 

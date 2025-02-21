@@ -16,8 +16,8 @@
                                         <img src="{{ item.logo }}" style="height: 17px; width: auto;"/>
                                     </div>
                                     <div class="small d-flex">
-                                        <p class="small my-0">{{ item.dept }}</p>
-                                        <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
+                                        <div>{{ item.position }}</div>
+                                        <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
                                     </div>
                                 </li>
                                 {% endfor %}

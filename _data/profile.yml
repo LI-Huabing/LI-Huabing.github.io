@@ -1,5 +1,5 @@
 primary_name: "Huabing Li"
-secondary_name: ""
+secondary_name: "李化冰"
 navbar_name: "Huabing Li"
 
 email: "email@huabing.li"
@@ -8,14 +8,14 @@ resume: /assets/files/CV.pdf
 github: LI-Huabing
 wechat_qrcode: /assets/images/etc/wechat.jpg
 wechat_prompt: >-
-  Please kindly tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+  Please kindly let me know your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
 linkedin: huabingli
 orcid: 0000-0003-4875-3258
 
 short_bio: >-
-  I am currently a PhD candidate at <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>, <a href="https://www.unibo.it/en/homepage">University of Bologna</a> and <a href="https://www.eur.nl/en">Erasmus University Rotterdam</a> under <a href="https://edle-phd.eu/">European Doctorate in Law and Economics (EDLE)</a> program, supervised by <a href="https://www.roeesarel.com/">Prof. Dr. Roee Sarel</a>.
+  I am currently a PhD candidate at <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>, <a href="https://www.unibo.it/en/homepage">University of Bologna</a> and <a href="https://www.eur.nl/en">Erasmus University Rotterdam</a> under <a href="https://edle-phd.eu/">European Doctorate in Law and Economics (EDLE)</a> program, supervised by <a href="https://www.roeesarel.com/">Prof. Dr. Roee Sarel</a> and <a href="https://pure.eur.nl/en/persons/shu-li">Prof. Dr. Shu Li</a>.
   <br>
-  My main research interests are in law and economics, including empirical legal research, applied game theory and experimental economics. I firmly believe that only exchanges between disciplines and scholars can lead to creations so that you are always welcome to contact me for academic discussions and collaborations!
+  My main research interest is in law and economics, including empirical legal research, modeling law, and experiments. My thesis will focus on the future of courts reshaped by digitalization. I firmly believe that only exchanges between disciplines and scholars can lead to creations, so that you are always welcome to contact me for academic discussions and collaborations!
 
 show_portrait: true
 portrait_url: /assets/images/photos/portrait.png
@@ -23,72 +23,58 @@ portrait_url: /assets/images/photos/portrait.png
 education:
 - name: University of Hamburg
   logo: /assets/images/badges/UHH.png
-  position: PhD candidate in Law and Economics
+  position: PhD candidate in law and economics
   date: Oct 2024 - present
 
 - name: University of Bologna
   logo: /assets/images/badges/Unibo.png
-  position: PhD candidate in Law and Economics
+  position: PhD candidate in law and economics
   date: Oct 2024 - present
 
 - name: Erasmus University Rotterdam
   logo: /assets/images/badges/EUR.png
-  position: PhD candidate in Law and Economics
+  position: PhD candidate in law and economics
   date: Oct 2024 - present
 
 - name: Erasmus University Rotterdam
   logo: /assets/images/badges/EUR.png
-  position: Joint LLM in Law and Economics
+  position: Joint LLM in law and economics
   date: Oct 2023 - Sep 2024
 
 - name: Pompeu Fabra University
   logo: /assets/images/badges/UPF.png
-  position: Joint LLM in Law and Economics
+  position: Joint LLM in law and economics
   date: Apr 2024 - Sep 2024
 
 - name: Ghent University
   logo: /assets/images/badges/UGent.png
-  position: Joint LLM in Law and Economics
+  position: Joint LLM in law and economics
   date: Jan 2024 - Mar 2024
 
 - name: University of Hamburg
   logo: /assets/images/badges/UHH.png
-  position: Joint LLM in Law and Economics
+  position: Joint LLM in law and economics
   date: Oct 2023 - Dec 2023
 
 - name: Renmin University of China
   logo: /assets/images/badges/RUC.png
-  position: Bachelor of Economics in Trade and Economics (major)
+  position: BEcon in trade and economics (major)
   date: Sep 2019 - Jun 2023
 
 - name: Renmin University of China
   logo: /assets/images/badges/RUC.png
-  position: Bachelor of Law in Law (minor)
+  position: LLB in law (minor)
   date: Sep 2019 - Jun 2023
 
 - name: Renmin University of China
   logo: /assets/images/badges/RUC.png
-  position: Bachelor of Engineering in Computer Science (minor)
+  position: BEng in computer science (minor)
   date: Sep 2019 - Jun 2023
 
 - name: Renmin University of China
   logo: /assets/images/badges/RUC.png
-  position: Bachelor of Management in Financial Management (minor)
+  position: BBA in financial management (minor)
   date: Sep 2019 - Jun 2023
-
-experience:
-- name: RUC National Academy of Development and Strategy
-  logo: /assets/images/badges/NADS.jpg
-  position: Internship researcher
-  date: 2021 - 2022
-- name: RUC Legal Aid Center
-  logo: /assets/images/badges/LAC.png
-  position: Internship researcher
-  date: 2021 - 2022
-- name: Frontier Institute of Regulation and Supervision Technology
-  logo: /assets/images/badges/FIRST.jpg
-  position: Internship researcher
-  date: 2021
 
 awards:
 - name: DAAD Graduate School Full Scholarship

@@ -1,9 +1,16 @@
 <footer class="footer">
-    <div class="container">
+    <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container-lg{% endif %}">
         <div class="row my-3">
-                <div class="text-right text-muted">
-                    Last updated: {{ "now" | date: "%b %Y" }}
+            <div class="col-6">
+                <div class="text-muted">
+                    <i>Last updated: {{ "now" | date: "%b %Y" }}</i>
                 </div>
+            </div>
+            <div class="col-6">
+                <div class="text-right text-muted">
+                    {{ site.data.display.footer_text }}
+                </div>
+            </div>
         </div>
     </div>
 </footer>

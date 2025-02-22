@@ -8,26 +8,14 @@
                         <div class="mx-2 my-1">
                             <h6>Education</h6>
                             <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.media %}
-                                <li>
-                                    <div class="d-flex">
-                                        <div><a href="{{ item.url }}" target="_blank"> {{ item.name }}</a> - {{ item.note }}</div>
-                                        <div class="ml-auto mt-auto no-break"><em>{{ item.date }}</em></div>
+                                {% for item in site.data.profile.education %}
+                                <li class="media mb-1">
+                                    <div class="media-body">
+                                        <p class="my-0">{{ item.name }} <img src="{{ item.logo }}" alt="{{ item.name }}" style="height: 18px;" class="float-right"></p>
+                                        <p class="small my-0">{{ item.dept }}</p>
+                                        <p class="small my-0">{{ item.position }} <em class="float-right">{{ item.date }}</em></p>
                                     </div>
                                 </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    {% if site.data.profile.awards %}
-                    <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>Main awards</h6>
-                            <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
-                                <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -37,9 +25,22 @@
                     {% if site.data.profile.service %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
-                            <h6>Service</h6>
+                            <h6>Services</h6>
                             <ul class="list small pl-3 mb-1">
                                 {% for item in site.data.profile.service %}
+                                <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if site.data.profile.awards %}
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6>Main Awards</h6>
+                            <ul class="list small pl-3 mb-1">
+                                {% for item in site.data.profile.awards %}
                                 <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
                                 {% endfor %}
                             </ul>

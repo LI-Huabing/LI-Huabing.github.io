@@ -14,7 +14,7 @@ orcid: 0000-0003-4875-3258
 short_bio: >-
   I am Huabing Li (李化冰), a PhD candidate at <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>, <a href="https://www.unibo.it/en/homepage">University of Bologna</a> and <a href="https://www.eur.nl/en">Erasmus University Rotterdam</a> under <a href="https://edle-phd.eu/">European Doctorate in Law and Economics</a> program, supervised by <a href="https://www.roeesarel.com/">Prof. Dr. Roee Sarel</a> and <a href="https://pure.eur.nl/en/persons/shu-li">Prof. Dr. Shu Li</a>.
   <br>
-  My main research interest is in law and economics, including empirical legal research, modeling law, and experiments. My thesis will focus on the future of courts reshaped by digitalization. I firmly believe that only exchanges between disciplines and scholars can lead to creations, so that you are always welcome to contact me for academic discussions and collaborations!
+  My main research interest is in law and economics, including empirical legal research, modeling law, and experiments. My thesis will focus on the future of courts reshaped by digitalization. You are always welcome to contact me for academic discussions and collaborations!
 
 show_portrait: true
 portrait_url: /assets/images/photos/portrait.png
@@ -22,21 +22,21 @@ portrait_url: /assets/images/photos/portrait.png
 education:
 - name: European Doctorate in Law and Economics
   dept: University of Hamburg, University of Bologna, and Erasmus University Rotterdam
-  logo: /assets/images/badges/UHH.png
+  logo: /assets/images/badges/EDLE.png
   position: PhD candidate in law and economics
-  date: Oct 2024 - present
+  date: 2024 - present
 
 - name: European Master in Law and Economics
   dept: University of Hamburg, Ghent University, Pompeu Fabra University, and Erasmus University Rotterdam
-  logo: /assets/images/badges/EUR.png
+  logo: /assets/images/badges/EMLE.png
   position: Joint LLM in law and economics
-  date: Oct 2023 - Oct 2024
+  date: 2023 - 2024
 
 - name: Renmin University of China
   dept: 
   logo: /assets/images/badges/RUC.png
   position: BEcon in trade and economics (major), LLB in law (minor), BEng in computer science (minor) and BBA in finance (minor)
-  date: Sep 2019 - Jun 2023
+  date: 2019 - 2023
 
 awards:
 - name: DAAD Graduate School Full Scholarship
@@ -49,18 +49,6 @@ awards:
   date: 2022
 - name: First prize in the RUC “Innovation Cup” Academic Competition
   date: 2022
-- name: RUC Outstanding Youth League Member
-  date: 2021, 2022
-- name: Second prize in the Beijing region of the Mathematical Modelling Competition
-  date: 2021
-- name: RUC Legal Aid Center Outstanding Volunteer
-  date: 2019, 2020, 2021
-- name: RUC Honorary Individual in the Fight Against the Covid-19 Epidemic
-  date: 2020
-- name: RUC Scholarship for Social Contribution and Volunteerism
-  date: 2020
-- name: RUC Scholarship for Academic Progress
-  date: 2020
 
 service:
 - name: Editor and anonymous reviewer of Chaoyang Law Review

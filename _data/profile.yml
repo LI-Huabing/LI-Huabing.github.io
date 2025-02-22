@@ -20,59 +20,21 @@ show_portrait: true
 portrait_url: /assets/images/photos/portrait.png
 
 education:
-- name: University of Hamburg
+- name: European Doctorate in Law and Economics (EDLE)
+  subname: University of Hamburg, University of Bologna, and Erasmus University Rotterdam
   logo: /assets/images/badges/UHH.png
   position: PhD candidate in law and economics
   date: Oct 2024 - present
 
-- name: University of Bologna
-  logo: /assets/images/badges/Unibo.png
-  position: PhD candidate in law and economics
-  date: Oct 2024 - present
-
-- name: Erasmus University Rotterdam
-  logo: /assets/images/badges/EUR.png
-  position: PhD candidate in law and economics
-  date: Oct 2024 - present
-
-- name: Erasmus University Rotterdam
+- name: European Master in Law and Economics (EMLE)
+  subname: University of Hamburg, Ghent University, Pompeu Fabra University, and Erasmus University Rotterdam
   logo: /assets/images/badges/EUR.png
   position: Joint LLM in law and economics
-  date: Oct 2023 - Sep 2024
+  date: Oct 2023 - Oct 2024
 
-- name: Pompeu Fabra University
-  logo: /assets/images/badges/UPF.png
-  position: Joint LLM in law and economics
-  date: Apr 2024 - Sep 2024
-
-- name: Ghent University
-  logo: /assets/images/badges/UGent.png
-  position: Joint LLM in law and economics
-  date: Jan 2024 - Mar 2024
-
-- name: University of Hamburg
-  logo: /assets/images/badges/UHH.png
-  position: Joint LLM in law and economics
-  date: Oct 2023 - Dec 2023
-
-- name: Renmin University of China
+- name: Renmin University of China (RUC)
   logo: /assets/images/badges/RUC.png
-  position: BEcon in trade and economics (major)
-  date: Sep 2019 - Jun 2023
-
-- name: Renmin University of China
-  logo: /assets/images/badges/RUC.png
-  position: LLB in law (minor)
-  date: Sep 2019 - Jun 2023
-
-- name: Renmin University of China
-  logo: /assets/images/badges/RUC.png
-  position: BEng in computer science (minor)
-  date: Sep 2019 - Jun 2023
-
-- name: Renmin University of China
-  logo: /assets/images/badges/RUC.png
-  position: BBA in financial management (minor)
+  position: BEcon in trade and economics (major), LLB in law (minor), BEng in computer science (minor) and BBA in finance (minor)
   date: Sep 2019 - Jun 2023
 
 awards:

@@ -22,31 +22,8 @@
                     </div>
                     {% endif %}
 
-                    {% if site.data.profile.experience %}
                     <div class="col-md-6">
-                        <div class="mx-2 my-1">
-                            <h6>Experience</h6>
-                            <ul class="list-unstyled mb-1">
-                                {% for item in site.data.profile.experience %}
-                                <li class="media mb-1">
-                                    <img src="{{ item.logo | relative_url }}" alt="{{ item.name }}" style="width: 36px; padding-right: 0.5em;" class="mr-1 mt-1">
-                                    <div class="media-body">
-                                        <div>{{ item.name }}</div>
-                                        <div class="small">{{ item.location }}</div>
-                                        <div class="small d-flex">
-                                            <div>{{ item.position }}</div>
-                                            <div class="mt-auto ml-auto no-break"><em>{{ item.date }}</em></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                    {% endif %}
-
                     {% if site.data.profile.awards %}
-                    <div class="col-md-6">
                         <div class="mx-2 my-1">
                             <h6>Awards</h6>
                             <ul class="list small pl-3 mb-1">
@@ -55,11 +32,9 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                    </div>
                     {% endif %}
 
                     {% if site.data.profile.service %}
-                    <div class="col-md-6">
                         <div class="mx-2 my-1">
                             <h6>Service</h6>
                             <ul class="list small pl-3 mb-1">
@@ -68,8 +43,8 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                    </div>
                     {% endif %}
+                    </div>
 
                 </div>
 

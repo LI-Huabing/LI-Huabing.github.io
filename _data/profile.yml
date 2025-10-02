@@ -7,7 +7,7 @@ resume: /assets/files/CV.pdf
 github: LI-Huabing
 wechat_qrcode: /assets/images/etc/wechat.jpg
 wechat_prompt: >-
-  Please kindly let me know your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+  Please kindly let me know your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my WeChat. Thanks!
 linkedin: huabingli
 orcid: 0000-0003-4875-3258
 
@@ -15,25 +15,22 @@ short_bio: >-
 
   I am a PhD candidate in the <a href="https://edle-phd.eu/">European Doctorate in Law and Economics</a> program (<a href="https://www.uni-hamburg.de/en.html">Hamburg</a> ⋅ <a href="https://www.unibo.it/en/homepage">Bologna</a> ⋅ <a href="https://www.eur.nl/en">Rotterdam</a>), supervised by <a href="https://www.roeesarel.com/">Roee Sarel</a> (Hamburg), <a href="https://www.eur.nl/people/franziska-weber">Franziska Weber</a> (Rotterdam), and <a href="https://pure.eur.nl/en/persons/shu-li">Shu Li</a> (Rotterdam). My dissertation explores how will digitalization reshape the future of courts through empirical, experimental, and modeling approaches, and I also work broadly across law & economics and actively seek academic collaborations.
 
-show_portrait: true
-portrait_url: /assets/images/photos/portrait.png
+show_portrait: false
+portrait_url: 
 
 education:
 - name: European Doctorate in Law and Economics
   dept: Hamburg, Bologna, and Rotterdam
-  logo: /assets/images/badges/EDLE.png
   position: Joint PhD in Law and Economics
   date: 2024 – Now
 
 - name: European Master in Law and Economics
   dept: Hamburg, Ghent, and Barcelona
-  logo: /assets/images/badges/EMLE.png
   position: Joint LLM in Law and Economics
   date: 2023 – 2024
 
 - name: Renmin University of China
   dept: Beijing
-  logo: /assets/images/badges/RUC.png
   position: Bachelor in Economics (major); Law, Computer Science, and Finance (minors)
   date: 2019 – 2023
 

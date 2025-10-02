@@ -20,19 +20,19 @@ portrait_url: /assets/images/photos/portrait.png
 
 education:
 - name: European Doctorate in Law and Economics
-  dept: University of Hamburg, University of Bologna, and Erasmus University Rotterdam
+  dept: Hamburg, Bologna, and Rotterdam
   logo: /assets/images/badges/EDLE.png
   position: Joint PhD in Law and Economics
   date: 2024 – Now
 
 - name: European Master in Law and Economics
-  dept: University of Hamburg, Ghent University, Pompeu Fabra University, and Erasmus University Rotterdam
+  dept: Hamburg, Ghent, and Barcelona
   logo: /assets/images/badges/EMLE.png
   position: Joint LLM in Law and Economics
   date: 2023 – 2024
 
 - name: Renmin University of China
-  dept: 
+  dept: Beijing
   logo: /assets/images/badges/RUC.png
   position: Bachelor in Economics (major); Law, Computer Science, and Finance (minors)
   date: 2019 – 2023

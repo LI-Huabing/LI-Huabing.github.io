@@ -3,7 +3,6 @@
         <div class="card border-0 shadow-sm bg-white">
             <div class="card-body p-4">
                 <div class="row" data-masonry='{"percentPosition": true }'>
-                    {% if site.data.profile.education %}
                     <div class="col-md-6">
                         <div class="mx-2 my-1">
                             <h6>Education</h6>
@@ -19,31 +18,35 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                    </div>
-                    {% endif %}
 
-                    <div class="col-md-6">
-                    {% if site.data.profile.awards %}
                         <div class="mx-2 my-1">
-                            <h6>Main awards</h6>
-                            <ul class="list small pl-3 mb-1">
-                                {% for item in site.data.profile.awards %}
-                                <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% endif %}
-
-                    {% if site.data.profile.service %}
-                        <div class="mx-2 my-1">
-                            <h6>Main service</h6>
+                            <h6>Services</h6>
                             <ul class="list small pl-3 mb-1">
                                 {% for item in site.data.profile.service %}
                                 <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
                                 {% endfor %}
                             </ul>
                         </div>
-                    {% endif %}
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mx-2 my-1">
+                            <h6>Honors & Awards</h6>
+                            <ul class="list small pl-3 mb-1">
+                                {% for item in site.data.profile.awards %}
+                                <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="mx-2 my-1">
+                            <h6>Services</h6>
+                            <ul class="list small pl-3 mb-1">
+                                {% for item in site.data.profile.service %}
+                                <li>{{ item.name }} <em class="float-right">{{ item.date }}</em></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

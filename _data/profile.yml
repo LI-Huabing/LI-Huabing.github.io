@@ -12,9 +12,8 @@ linkedin: huabingli
 orcid: 0000-0003-4875-3258
 
 short_bio: >-
-  I am Huabing Li (李化冰), a PhD candidate at <a href="https://www.uni-hamburg.de/en.html">University of Hamburg</a>, <a href="https://www.unibo.it/en/homepage">University of Bologna</a>, and <a href="https://www.eur.nl/en">Erasmus University Rotterdam</a> under <a href="https://edle-phd.eu/">European Doctorate in Law and Economics</a> program, supervised by <a href="https://www.roeesarel.com/">Prof. Dr. Roee Sarel</a> (University of Hamburg) and <a href="https://pure.eur.nl/en/persons/shu-li">Dr. Shu Li</a> (Erasmus University Rotterdam).
-  <br>
-  My main research interest is in law and economics, including empirical legal research, modeling law, and experiments. My PhD thesis will focus on the future of courts reshaped by digitalization. You are always welcome to contact me for academic discussions and collaborations!
+
+  I am a PhD candidate in the <a href="https://edle-phd.eu/">European Doctorate in Law and Economics</a> program (<a href="https://www.uni-hamburg.de/en.html">Hamburg</a> ⋅ <a href="https://www.unibo.it/en/homepage">Bologna</a> ⋅ <a href="https://www.eur.nl/en">Rotterdam</a>), supervised by <a href="https://www.roeesarel.com/">Roee Sarel</a> (Hamburg), <a href="https://www.eur.nl/people/franziska-weber">Franziska Weber</a> (Rotterdam), and <a href="https://pure.eur.nl/en/persons/shu-li">Shu Li</a> (Rotterdam). My dissertation explores how will digitalization reshape the future of courts through empirical, experimental, and modeling approaches, and I also work broadly across law & economics and actively seek academic collaborations.
 
 show_portrait: true
 portrait_url: /assets/images/photos/portrait.png
@@ -23,35 +22,45 @@ education:
 - name: European Doctorate in Law and Economics
   dept: University of Hamburg, University of Bologna, and Erasmus University Rotterdam
   logo: /assets/images/badges/EDLE.png
-  position: PhD candidate in law and economics
-  date: 2024 - present
+  position: Joint PhD in Law and Economics
+  date: 2024 – Now
 
 - name: European Master in Law and Economics
   dept: University of Hamburg, Ghent University, Pompeu Fabra University, and Erasmus University Rotterdam
   logo: /assets/images/badges/EMLE.png
-  position: Joint LLM in law and economics
-  date: 2023 - 2024
+  position: Joint LLM in Law and Economics
+  date: 2023 – 2024
 
 - name: Renmin University of China
   dept: 
   logo: /assets/images/badges/RUC.png
-  position: BEcon in trade and economics (major); LLB in law, BEng in computer science, and BBA in financial management (minor)
-  date: 2019 - 2023
+  position: Bachelor in Economics (major); Law, Computer Science, and Finance (minors)
+  date: 2019 – 2023
 
 awards:
+- name: AsLEA Best Paper Awards for Junior Scholars
+  date: 2025
 - name: DAAD Graduate School Full Scholarship
-  date: 2024 - 2028
+  date: 2024
 - name: Erasmus Mundus Full Scholarship
-  date: 2023 - 2024
-- name: China National Endeavor Scholarship
+  date: 2023
+- name: China National Encouragement Scholarship
   date: 2022
 - name: Finalist prize in the American Mathematical Contest in Modelling
   date: 2022
-- name: First prize in the RUC “Innovation Cup” Academic Competition
+- name: First prize in the Renmin University of China “Innovation Cup” Academic Competition
   date: 2022
+- name: Second prize in the Beijing Mathematical Modeling Competition
+  date: 2022
+- name: Outstanding Volunteer of Renmin University of China Legal Aid Center
+  date: 2020, 2021
+- name: Honorary Individual in the Fight Against the Covid‑19
+  date: 2020
+- name: Scholarship for Social Contribution and Volunteerism
+  date: 2020
 
 service:
-- name: Editor and anonymous reviewer of Chaoyang Law Review
-  date: 2022 - present
-- name: Anonymous reviewer of Crime, Law and Social Change
+- name: Editor and reviewer of Chaoyang Law Review
+  date: 2023 – Now
+- name: Reviewer of Crime, Law and Social Change
   date: 2024

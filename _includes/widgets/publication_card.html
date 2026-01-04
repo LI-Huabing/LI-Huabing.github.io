@@ -7,11 +7,7 @@
                     {% if include.title %}{{ include.title }}{% else %}Selected Recent Publications{% endif %}
                 </h5>
                 {% for item in publications limit:include.limit %}
-                    {% if forloop.first %}
-                        {% include widgets/publication_item.html item=item is_first=true %}    
-                    {% else %}
-                        {% include widgets/publication_item.html item=item %}    
-                    {% endif %}
+                    {% include widgets/publication_item.html item=item %}    
                 {% endfor %}
                 <div class="mt-3 text-right">
                     <a href="publications">All publications <i class="fas fa-angle-double-right"></i></a>

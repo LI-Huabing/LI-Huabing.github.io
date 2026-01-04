@@ -18,11 +18,7 @@ body_attr: >-
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-body p-4">
                         {% for item in year.items %}
-                            {% if forloop.first %}
-                                {% include widgets/publication_item.html item=item is_first=true %}
-                            {% else %}
-                                {% include widgets/publication_item.html item=item %}
-                            {% endif %}
+                            {% include widgets/publication_item.html item=item %}
                         {% endfor %}
                     </div>
                 </div>

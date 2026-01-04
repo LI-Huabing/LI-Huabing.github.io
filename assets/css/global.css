@@ -19,6 +19,14 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 400;
 }
 
+.chinese-name {
+    font-family: "KaiTi", "楷体", "STKaiti", "华文楷体", serif;
+    font-size: 0.6em;
+    font-weight: 300;
+    color: #6c757d;
+    margin-left: 0.3em;
+}
+
 .navbar {
     opacity: 0.95;
 }

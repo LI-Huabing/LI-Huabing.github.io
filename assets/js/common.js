@@ -12,20 +12,18 @@ $(function () {
     })
     $('[data-toggle="tooltip"]').tooltip()
     
-    // News year collapse toggle - update icons
-    $('.news-year-header').each(function() {
-        var $header = $(this);
-        var targetId = $header.data('target');
-        var $target = $(targetId);
+    // News year toggle - simple show/hide
+    $('.news-year-toggle').on('click', function() {
+        var $toggle = $(this);
+        var $content = $toggle.next('.news-year-content');
+        var $icon = $toggle.find('i');
         
-        $target.on('show.bs.collapse', function() {
-            $header.find('i').removeClass('fa-chevron-right').addClass('fa-chevron-down');
-            $header.attr('aria-expanded', 'true');
-        });
-        
-        $target.on('hide.bs.collapse', function() {
-            $header.find('i').removeClass('fa-chevron-down').addClass('fa-chevron-right');
-            $header.attr('aria-expanded', 'false');
-        });
+        if ($content.is(':visible')) {
+            $content.slideUp(200);
+            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
+        } else {
+            $content.slideDown(200);
+            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+        }
     });
 })

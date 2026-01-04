@@ -11,8 +11,7 @@
                     <div class="my-2">
                         <div class="news-year-toggle text-muted mb-2 d-flex align-items-center" style="cursor: pointer;">
                             <span>{{ year.name }}</span>
-                            <hr class="flex-grow-1 mx-2 my-0" style="border-top: 1px solid #dee2e6;">
-                            <i class="fas fa-chevron-{% if first_year %}down{% else %}right{% endif %}"></i>
+                            <i class="fas fa-chevron-{% if first_year %}down{% else %}right{% endif %} ml-2"></i>
                         </div>
                         <div class="news-year-content" {% unless first_year %}style="display: none;"{% endunless %}>
                             {% for item in year.items %}

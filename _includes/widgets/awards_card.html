@@ -1,0 +1,15 @@
+<div class="row mt-3">
+    <div class="col">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="card-body p-4">
+                <h6 class="mb-3 pb-2 border-bottom"><i class="fas fa-trophy"></i> Honors & Awards</h6>
+                <ul class="list small pl-3 mb-0">
+                    {% for item in site.data.profile.awards %}
+                    <li class="mb-2">{{ item.name }} <em class="float-right text-muted">{{ item.date }}</em></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

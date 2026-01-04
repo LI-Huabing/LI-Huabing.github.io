@@ -14,13 +14,6 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 700;
 }
 
-.text-profile-position {
-    font-weight: 400;
-}
-
-.text-profile-bio {
-    font-weight: 400;
-}
 
 .chinese-name {
     font-family: "KaiTi", "楷体", "STKaiti", "STKaiti SC", "STKaiti TC", "华文楷体", "Kaiti SC", "Kaiti TC", "BiauKai", "標楷體", "DFKai-SB", "DFKaiSB", serif;
@@ -39,4 +32,8 @@ h1, h2, h3, h4, h5, h6,
 
 .no-break {
     white-space: nowrap;
+}
+
+.abstract-links {
+    line-height: 1.25;
 }

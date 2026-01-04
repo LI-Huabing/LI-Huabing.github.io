@@ -6,7 +6,7 @@
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
             <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
             <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
-            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+            <p class="small pb-0 mb-0 text-muted abstract-links">
                 {% if item.links %}
                 {% for link in item.links %}
                 {% if link[1].url %}
@@ -19,13 +19,13 @@
             </p>
         </div>
         <div class="col-md-4 col-xl-3 p-2 pl-md-3">
-            <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm" src="assets/images/empty_300x200.png">
+            <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy w-100 rounded" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f8f9fa'/%3E%3C/svg%3E">
         </div>
     </div>
 </div>
 
 <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;">
-    <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy card-img w-100" src="assets/images/empty_300x200.png">
+    <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy card-img w-100" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23f8f9fa'/%3E%3C/svg%3E">
     <div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
         <div class="mb-auto"></div>
         <div>
@@ -33,7 +33,7 @@
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
             <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
             <p class="mt-0 mb-0 small text-muted d-none d-sm-block">{{ item.abstract }}</p>
-            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+            <p class="small pb-0 mb-0 text-muted abstract-links">
                 {% if item.links %}
                 {% for link in item.links %}
                 {% if link[1].url %}

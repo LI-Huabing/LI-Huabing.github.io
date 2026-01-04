@@ -19,15 +19,6 @@ navbar_title: Home
 {% endif %}
 {% endif %}
 
-{% if site.data.display.homepage.show_selected_publications %}
-{% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
-{% 
-    include widgets/publication_card.html 
-    publications=pubs
-    title='Selected Publications'
-%}
-{% endif %}
-
 <div class="row mt-3">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">

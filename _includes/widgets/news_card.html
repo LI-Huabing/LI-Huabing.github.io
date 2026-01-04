@@ -9,7 +9,7 @@
                 <div>
                     {% for year in news_by_year %}
                     <div class="my-2">
-                        <div class="news-year-toggle text-muted mb-2 d-flex justify-content-between align-items-center" style="cursor: pointer;" data-year="{{ year.name }}">
+                        <div class="news-year-toggle text-muted mb-2 d-flex justify-content-between align-items-center" style="cursor: pointer;">
                             <span>{{ year.name }}</span>
                             <i class="fas fa-chevron-{% if first_year %}down{% else %}right{% endif %}"></i>
                         </div>

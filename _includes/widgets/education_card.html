@@ -5,13 +5,10 @@
                 <h5 class="mb-3">Education</h5>
                 <div>
                     {% for item in site.data.profile.education %}
-                    <div class="my-1 d-flex">
-                        <div class="flex-grow-1">
-                            <div class="font-weight-medium">{{ item.name }}</div>
-                            <div class="small text-muted">{{ item.dept }}</div>
-                            <div class="small">{{ item.position }}</div>
-                        </div>
-                        <div class="ml-auto mt-auto text-muted">{{ item.date }}</div>
+                    <div class="my-1">
+                        <div class="font-weight-medium">{{ item.name }} <span class="float-right text-muted">{{ item.date }}</span></div>
+                        <div class="small text-muted">{{ item.dept }}</div>
+                        <div class="small">{{ item.position }}</div>
                     </div>
                     {% endfor %}
                 </div>

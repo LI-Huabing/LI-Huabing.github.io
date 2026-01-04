@@ -1,4 +1,5 @@
 {% assign news_by_year = site.news | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" -%}
+{% assign first_year = true %}
 
 <div class="row mt-3">
     <div class="col">
@@ -8,14 +9,19 @@
                 <div>
                     {% for year in news_by_year %}
                     <div class="my-2">
-                        <div class="text-muted mb-2">{{ year.name }}</div>
-                        {% for item in year.items %}
-                        <div class="my-1 d-flex">
-                            <div>{{ item.title }}</div>
-                            <div class="ml-auto mt-auto text-muted no-break">{{ item.date | date: "%b %d" }}</div>
+                        <div class="news-year-header text-muted mb-2" style="cursor: pointer;" data-toggle="collapse" data-target="#news-year-{{ year.name }}" aria-expanded="{% if first_year %}true{% else %}false{% endif %}" aria-controls="news-year-{{ year.name }}">
+                            <i class="fas fa-chevron-{% if first_year %}down{% else %}right{% endif %} mr-2"></i>{{ year.name }}
                         </div>
-                        {% endfor %}
+                        <div class="collapse {% if first_year %}show{% endif %}" id="news-year-{{ year.name }}">
+                            {% for item in year.items %}
+                            <div class="my-1 d-flex">
+                                <div>{{ item.title }}</div>
+                                <div class="ml-auto mt-auto text-muted no-break">{{ item.date | date: "%b %d" }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
+                    {% assign first_year = false %}
                     {% endfor %}
                 </div>
             </div>

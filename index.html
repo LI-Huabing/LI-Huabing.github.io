@@ -5,10 +5,11 @@ navbar_title: Home
 ---
 {% include widgets/profile_card.html %}
 
+{% include widgets/education_card.html %}
+
 {% assign count_news = site.news | size %}
 {% if count_news > 0 %}
 {% include widgets/news_card.html %}
 {% endif %}
 
-{% include widgets/education_card.html %}
 {% include widgets/awards_card.html %}

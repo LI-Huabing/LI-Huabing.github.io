@@ -2,10 +2,10 @@
 <div class="row mt-3">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-4">
-                <h6 class="mb-3 pb-2 border-bottom">
+            <div class="card-body p-5">
+                <h5 class="mb-3">
                     {% if include.title %}{{ include.title }}{% else %}Selected Recent Publications{% endif %}
-                </h6>
+                </h5>
                 {% for item in publications limit:include.limit %}
                     {% include widgets/publication_item.html item=item %}    
                 {% endfor %}

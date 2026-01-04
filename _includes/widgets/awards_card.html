@@ -1,13 +1,13 @@
 <div class="row mt-3">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
-            <div class="card-body p-5">
+            <div class="card-body p-4">
                 <h5 class="mb-3">Honors & Awards</h5>
                 <div>
                     {% for item in site.data.profile.awards %}
                     <div class="my-1 d-flex">
                         <div>{{ item.name }}</div>
-                        <div class="ml-auto text-muted">{{ item.date }}</div>
+                        <div class="ml-auto text-muted my-1">{{ item.date }}</div>
                     </div>
                     {% endfor %}
                 </div>

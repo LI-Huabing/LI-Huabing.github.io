@@ -1,17 +1,23 @@
 <footer class="footer">
     <div class="{% if page.container_class %}{{ page.container_class }}{% else %}container{% endif %}">
         <div class="row my-3">
-            <div class="col d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-                <div class="d-flex flex-column mb-3 mb-md-0">
+            <div class="col d-flex flex-row justify-content-between align-items-center">
+                <div class="d-flex flex-column">
+                    <div class="text-muted mb-1">
+                        © {{ "now" | date: "%Y" }} by <a href="https://www.huabing.li">Huabing Li</a>
+                    </div>
+                    <div class="text-muted mb-1">
+                        Contact: <a href="mailto:{{ site.data.profile.email | encode_email }}">{{ site.data.profile.email }}</a>
+                    </div>
                     <div class="text-muted mb-1">
                         Last updated: {{ "now" | date: "%b %Y" }}
                     </div>
                     <div class="text-muted">
-                        {{ site.data.display.footer_text }}
+                        <p class="mb-0">Template from <a href="https://github.com/luost26/academic-homepage" target="_blank" rel="noopener noreferrer">academic-homepage</a></p>
                     </div>
                 </div>
                 <div class="d-flex align-items-center">
-                    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=007bff&w=300&t=tt&d=WPau02tkIDSKWMO-WsNnNwUR4-qnFe3bZ2jIJFNBPiI&co=f8f9fa&cmo=e7892a&cmn=f10f5b&ct=000000'></script>
+                    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=WPau02tkIDSKWMO-WsNnNwUR4-qnFe3bZ2jIJFNBPiI"></script>
                 </div>
             </div>
         </div>

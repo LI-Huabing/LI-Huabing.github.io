@@ -60,3 +60,9 @@ h1, h2, h3, h4, h5, h6,
 .badge-publication {
     font-size: 100%;
 }
+
+/* Fix spacing for first publication item - remove top padding */
+.card-body > div > .d-none.d-md-block:first-child .row .col-md-8,
+.card-body > div > .d-none.d-md-block:first-child .row .col-xl-9 {
+    padding-top: 0 !important;
+}

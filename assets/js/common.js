@@ -12,18 +12,8 @@ $(function () {
     })
     $('[data-toggle="tooltip"]').tooltip()
     
-    // News year toggle - simple show/hide
-    $('.news-year-toggle').on('click', function() {
-        var $toggle = $(this);
-        var $content = $toggle.next('.news-year-content');
-        var $icon = $toggle.find('i');
-        
-        if ($content.is(':visible')) {
-            $content.slideUp(200);
-            $icon.removeClass('fa-chevron-down').addClass('fa-chevron-right');
-        } else {
-            $content.slideDown(200);
-            $icon.removeClass('fa-chevron-right').addClass('fa-chevron-down');
-        }
+    $('.news-year-toggle').click(function() {
+        $(this).next('.news-year-content').toggle();
+        $(this).find('i').toggleClass('fa-chevron-down fa-chevron-right');
     });
 })

@@ -1,10 +1,7 @@
 {% assign item = include.item %}
 <div class="d-none d-md-block">
     <div class="row no-gutters border-bottom border-gray">
-        <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
-            <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm" src="assets/images/empty_300x200.png">
-        </div>
-        <div class="col-md-9 col-xl-10 p-3 pl-md-0">
+        <div class="col-md-9 col-xl-10 p-3 pr-md-0">
             <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
             <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
@@ -21,7 +18,9 @@
                 {% endfor %}
                 {% endif %}
             </p>
-
+        </div>
+        <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
+            <img data-src="{{ item.cover }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm" src="assets/images/empty_300x200.png">
         </div>
     </div>
 </div>

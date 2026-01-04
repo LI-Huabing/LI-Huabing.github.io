@@ -5,10 +5,6 @@ body {
     padding-top: 5.0rem;
 }
 
-.container {
-    max-width: 1300px;
-}
-
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 700;

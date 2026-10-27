@@ -1,0 +1,28 @@
+---
+import { LEAF_ASPECTS, leafSize, leafSrc } from "../lib/leaves";
+
+const newestFirst = LEAF_ASPECTS.map((_, leaf) => leaf).reverse();
+---
+
+<p class="key">
+  <span class="title">Leaf colour</span>
+  <span>newest</span>
+  <span class="leaves" aria-hidden="true">{newestFirst.map((leaf) => <img src={leafSrc(leaf)} {...leafSize(leaf)} alt="" />)}</span>
+  <span>oldest</span>
+</p>
+
+<style>
+  .key {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6em;
+    font-family: var(--sans);
+    letter-spacing: 0.01em;
+    color: var(--pencil);
+  }
+
+  .title { margin-right: 0.4em; font-family: var(--serif); font-size: 1.15em; letter-spacing: 0; color: var(--ink); }
+  .leaves { display: flex; gap: 0.15em; }
+  .leaves img { height: 1.9em; width: auto; }
+</style>

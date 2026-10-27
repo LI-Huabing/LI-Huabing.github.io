@@ -1,0 +1,14 @@
+---
+interface Props {
+  svg: string;
+}
+const { svg } = Astro.props;
+---
+
+<figure set:html={svg} />
+
+<style>
+  figure { container-type: inline-size; }
+  figure :global(svg) { display: block; width: 100%; height: auto; overflow: visible; }
+  figure :global(text) { font-size: clamp(16.75px, 38.81px - 7.095cqw, 22px); }
+</style>

@@ -1,0 +1,77 @@
+---
+import { getCollection } from "astro:content";
+import { growFlowers } from "../lib/flowers";
+import { monthYear } from "../lib/format";
+import { leafFor, leafSize, leafSrc } from "../lib/leaves";
+import { europe, world } from "../lib/talk-map";
+import LeafKey from "./LeafKey.astro";
+import Section from "./Section.astro";
+import TalkMap from "./TalkMap.astro";
+
+const talks = (await getCollection("talks"))
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .map((t) => ({ ...t.data, id: t.id }));
+const inEurope = ({ lon, lat }: { lon: number; lat: number }) => europe.holds(lon, lat);
+const near = talks.filter(inEurope);
+const far = talks
+  .filter((t) => !inEurope(t))
+  .reverse()
+  .map((t) => ({ ...t, leaf: leafFor(t.date) }));
+---
+
+<Section id="talks" title="Talks">
+  <div class="wide" style={`--ratio: ${world.width / world.height}`}>
+    <TalkMap map={world} flowers={growFlowers(talks, world)} />
+    <div class="key"><LeafKey /></div>
+  </div>
+
+  <div class="narrow">
+    <TalkMap map={europe} flowers={growFlowers(near, europe)} />
+    <div class="key"><LeafKey /></div>
+    {
+      far.length > 0 && (
+        <section class="elsewhere" aria-labelledby="elsewhere">
+          <h3 class="subheading" id="elsewhere">Elsewhere</h3>
+          <ol>
+            {far.map((t) => (
+              <li>
+                <img class="leaf" src={leafSrc(t.leaf)} {...leafSize(t.leaf)} alt="" />
+                <p class="city">{t.city}</p>
+                <p class="event">{t.event}</p>
+                <p class="where meta">{t.host}, {monthYear.format(t.date)}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+  </div>
+</Section>
+
+<style>
+  .wide {
+    width: min(100%, calc((100svh - 17 * var(--u)) * var(--ratio)));
+    margin-inline: auto;
+  }
+  .narrow { display: none; }
+  .key { display: flex; justify-content: flex-end; margin-top: 1.2em; font-size: var(--small); }
+
+  .elsewhere { margin-top: 56px; }
+  .elsewhere ol { list-style: none; padding: 0; }
+  .elsewhere li {
+    display: grid;
+    grid-template-columns: 1.4em minmax(0, 1fr);
+    column-gap: 0.55em;
+    font-size: var(--row);
+  }
+  .elsewhere li + li { margin-top: 1.1em; }
+  .leaf { grid-row: 1; width: auto; height: 1.15em; align-self: center; justify-self: center; rotate: 38deg; }
+  .city { grid-column: 2; font-style: italic; line-height: 1.45; }
+  .event { grid-column: 2; line-height: 1.35; }
+  .where { grid-column: 2; margin-top: 0.3em; color: var(--pencil); }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px), (pointer: coarse) and (max-height: 500px) {
+    .wide { display: none; }
+    .narrow { display: block; }
+  }
+</style>

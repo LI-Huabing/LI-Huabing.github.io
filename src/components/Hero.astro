@@ -1,0 +1,123 @@
+<section class="hero page">
+  <img
+    class="portrait recede"
+    src="/images/portrait-1254.webp"
+    srcset="/images/portrait-640.webp 640w, /images/portrait-960.webp 960w, /images/portrait-1254.webp 1254w, /images/portrait-1880.webp 1880w, /images/portrait-2508.webp 2508w"
+    sizes="(max-aspect-ratio: 5/4) min(118vw, 860px, 62vh), (max-width: 760px) min(118vw, 860px, 62vh), min(56vw, 90vh, 1792px)"
+    width="2508"
+    height="2508"
+    fetchpriority="high"
+    alt="Pencil portrait of Huabing Li with a blue watercolour wash"
+  />
+  <nav class="contents meta recede" aria-label="Sections">
+    <a href="#cv">CV</a>
+    <a href="#research">Research</a>
+    <a href="#talks">Talks</a>
+  </nav>
+  <div class="text recede">
+    <h1>Huabing Li</h1>
+    <p class="role meta">
+      <span>PhD candidate in Law & Economics</span>
+      <span>Universities of Hamburg, Bologna, and Rotterdam</span>
+    </p>
+    <p class="say">
+      <span>I study the incidence of digital technology in law:</span>
+      <span><a href="#gains">who really gains</a>, <a href="#pays">who really pays</a>, and <a href="#respond">how law should respond</a>.</span>
+    </p>
+    <ul class="links link-row meta">
+      <li><a href="mailto:email@huabing.li">email@huabing.li</a></li>
+      <li><a href="https://github.com/LI-Huabing">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/huabingli">LinkedIn</a></li>
+      <li><a href="https://orcid.org/0000-0003-4875-3258">ORCID</a></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero {
+    --say: max(1.7 * var(--u), 1.0625rem);
+    position: relative;
+    height: 100svh;
+    overflow: hidden;
+  }
+
+  .portrait {
+    position: absolute;
+    bottom: 0;
+    right: calc(var(--side) - var(--u));
+    height: min(90svh, 56 * var(--u));
+    width: auto;
+    mix-blend-mode: multiply;
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+  }
+
+  .text {
+    position: absolute;
+    z-index: 2;
+    left: var(--inset);
+    top: calc(70svh - 10 * var(--u));
+    transform: translateY(-50%);
+    width: max(40 * var(--u), 20 * var(--say));
+  }
+
+  h1 {
+    font-size: calc(7.5 * var(--u));
+    font-style: italic;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .role {
+    margin-top: calc(2 * var(--u));
+    line-height: 1.6;
+    color: var(--pencil);
+  }
+  .role > span { display: block; }
+
+  .say {
+    margin-top: calc(4 * var(--u));
+    font-size: var(--say);
+    line-height: 1.45;
+  }
+  .say > span { display: block; text-wrap: balance; }
+
+  .links { margin-top: calc(4 * var(--u)); }
+
+  .contents {
+    position: absolute;
+    z-index: 2;
+    top: max(24px, 3 * var(--u));
+    right: var(--inset);
+  }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .hero {
+      --say: 1.375rem;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0 var(--gutter) 72px;
+    }
+    .contents { position: static; order: -1; align-self: flex-end; padding-top: 24px; }
+    .portrait {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      align-self: flex-end;
+      width: min(118vw, 860px, 62svh);
+      height: auto;
+      margin: -2vw max(-14vw, -120px) 0 0;
+    }
+    .text { position: relative; left: auto; top: auto; transform: none; width: auto; margin-top: -4vw; }
+    h1 { font-size: clamp(48px, 11vw, 96px); }
+    .role { margin-top: 12px; }
+    .say { margin-top: 32px; max-width: 30em; }
+    .links { margin-top: 32px; }
+  }
+  @media (max-width: 600px) {
+    .hero { --say: 1.25rem; }
+    .portrait { margin-right: -16vw; }
+    h1 { font-size: clamp(44px, 13vw, 64px); }
+  }
+</style>

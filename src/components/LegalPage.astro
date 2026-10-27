@@ -1,0 +1,46 @@
+---
+import SubPage from "../layouts/SubPage.astro";
+
+interface Props {
+  title: { en: string; de: string };
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<SubPage title={`${title.en} / ${title.de}`} description={description}>
+  <main class="legal">
+    <h1 class="headline">{title.en} / <span lang="de">{title.de}</span></h1>
+    <div class="versions">
+      <div lang="en">
+        <slot name="en" />
+        <p class="updated meta">Last revised October 2026.</p>
+      </div>
+      <div lang="de">
+        <slot name="de" />
+        <p class="updated meta">Stand: Oktober 2026.</p>
+      </div>
+    </div>
+  </main>
+</SubPage>
+
+<style>
+  .versions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 32em));
+    column-gap: calc(4 * var(--u));
+    margin-top: calc(6 * var(--u));
+    font-size: var(--row);
+  }
+  .versions > div { hyphens: auto; }
+  .legal :global(p), .legal :global(address) {
+    font-style: normal;
+    line-height: 1.5;
+  }
+  .legal :global(* + p), .legal :global(* + address) { margin-top: 0.7em; }
+  .versions .updated { margin-top: 1.4em; font-size: var(--small); color: var(--pencil); }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .versions { grid-template-columns: minmax(0, 1fr); row-gap: 40px; margin-top: 32px; }
+  }
+</style>

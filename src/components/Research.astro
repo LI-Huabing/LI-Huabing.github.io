@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import Paper from "./Paper.astro";
+import Section from "./Section.astro";
+
+const papers = (await getCollection("papers")).sort((a, b) => a.data.order - b.data.order);
+const groups = [
+  { id: "gains", question: "Who really gains?" },
+  { id: "pays", question: "Who really pays?" },
+  { id: "respond", question: "How should law respond?" },
+  { id: "besides", question: "Besides" },
+];
+---
+
+<Section id="research" title="Research">
+  {
+    groups.map((q) => (
+      <section class="group" aria-labelledby={q.id}>
+        <h3 class="subheading" id={q.id}>{q.question}</h3>
+        <ol>
+          {papers
+            .filter((p) => p.data.group === q.id)
+            .map((p) => (
+              <Paper paper={p} />
+            ))}
+        </ol>
+      </section>
+    ))
+  }
+</Section>
+
+<style>
+  .group + .group { margin-top: calc(8 * var(--u)); }
+
+  ol { list-style: none; padding: 0; }
+
+  @media (aspect-ratio > 5/4) and (width > 760px) {
+    .group {
+      display: grid;
+      grid-template-columns: minmax(0, var(--aside)) minmax(0, 1fr);
+      column-gap: calc(4 * var(--u));
+      align-items: baseline;
+    }
+    h3 { position: sticky; top: calc(4 * var(--u)); margin: 0; scroll-margin-top: calc(4 * var(--u)); }
+  }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .group + .group { margin-top: 56px; }
+  }
+</style>

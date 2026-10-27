@@ -1,0 +1,222 @@
+---
+import { bachelor, cities, degrees, minors, subjects, years } from "../lib/cv";
+import Education from "./Education.astro";
+import LeafKey from "./LeafKey.astro";
+
+const W = 840, H = 1255, X0 = 120, Y0 = 60;
+const STEM_X = 525;
+
+const LEAVES: { at: [number, number]; side: "left" | "right" }[] = [
+  { at: [401, 887], side: "left" },
+  { at: [650, 778], side: "right" },
+  { at: [420, 640], side: "left" },
+  { at: [668, 548], side: "right" },
+  { at: [434, 422], side: "left" },
+  { at: [625, 298], side: "right" },
+  { at: [457, 197], side: "left" },
+];
+
+const ROOTS: { at: [number, number]; place: "left" | "right" | "foot-left" | "foot-right" }[] = [
+  { at: [240, 1184], place: "left" },
+  { at: [381, 1250], place: "foot-left" },
+  { at: [673, 1239], place: "foot-right" },
+  { at: [808, 1216], place: "right" },
+];
+const BUD: [number, number] = [534, 118];
+const GROUND = 1100;
+
+const EDGE = { left: 195, right: 835 };
+const FOOT = Y0 + H + 10;
+
+const x = (px: number) => `calc(var(--stem) + ${px - STEM_X} * var(--unit))`;
+const y = (px: number) => `calc(${px - Y0} * var(--unit))`;
+
+const footRow = `calc(${y(FOOT)} + 0.75em)`;
+
+const spans = degrees.map((d) => {
+  const rows = d.stops.map((s) => LEAVES[s.leaf].at[1]);
+  return { top: y(Math.min(...rows)), bottom: y(Math.max(...rows)), start: Math.max(...rows), year: d.from.slice(0, 4) };
+});
+const brackets = [
+  ...degrees.map((d, i) => ({ title: d.degree, lines: [`${d.detail}, ${years(d)}`], top: spans[i].top, bottom: spans[i].bottom })).reverse(),
+  {
+    title: bachelor.degree,
+    lines: [minors, bachelor.school, `${bachelor.city}, ${years(bachelor)}`],
+    top: y(GROUND),
+    bottom: footRow,
+  },
+];
+
+const ticks = [
+  { at: y(BUD[1]), long: true, label: "now" },
+  ...LEAVES.map(({ at }) => {
+    const span = spans.find((s) => s.start === at[1]);
+    return { at: y(at[1]), long: span !== undefined, label: span?.year };
+  }),
+  { at: footRow, long: true, label: bachelor.from.slice(0, 4) },
+];
+
+const leaders = [
+  ...LEAVES.map(({ at, side }) => ({ from: at, to: [EDGE[side], at[1]] })),
+  ...ROOTS.map(({ at, place }) => ({ from: at, to: place === "left" || place === "right" ? [EDGE[place], at[1]] : [at[0], FOOT] })),
+];
+---
+
+<figure class="figure meta" style={`--px: ${H}; --ratio: ${W / H}; --reach-left: ${STEM_X - EDGE.left}; --reach-right: ${EDGE.right - STEM_X}`}>
+  <div class="chart">
+    <div class="plate">
+      <div class="paper" style={`--left: ${x(X0)}`}>
+        <img
+          src="/images/plant-840.webp"
+          srcset="/images/plant-420.webp 420w, /images/plant-630.webp 630w, /images/plant-840.webp 840w, /images/plant-1260.webp 1260w, /images/plant-1680.webp 1680w"
+          sizes="(max-aspect-ratio: 5/4) 330px, (max-width: 760px) 330px, min(18.4vw, 31vh)"
+          width={W}
+          height={H}
+          loading="lazy"
+          alt="A young plant drawn in pencil and watercolour: four roots in a blue wash, seven leaves turning from oxblood at the bottom to green at the top, and a bud."
+        />
+        <svg class="leaders" viewBox={`${X0} ${Y0} ${W} ${H + 40}`} aria-hidden="true">
+          {
+            leaders.map(({ from, to }) => (
+              <g>
+                <line x1={from[0]} y1={from[1]} x2={to[0]} y2={to[1]} />
+                <circle cx={from[0]} cy={from[1]} r="3.5" />
+              </g>
+            ))
+          }
+        </svg>
+      </div>
+
+      <ul class="labels" aria-hidden="true">
+        {
+          cities.map((c) => {
+            const { at, side } = LEAVES[c.leaf];
+            return (
+              <li class={side} style={side === "right" ? `left: ${x(EDGE.right)}; top: ${y(at[1])}` : `top: ${y(at[1])}`}>
+                <span class="name"><em>{c.city}</em>, {c.from.slice(0, 4)}</span>
+                <span>{c.school}</span>
+              </li>
+            );
+          })
+        }
+        {
+          ROOTS.map(({ at: [rx, ry], place }, i) => {
+            const where = {
+              left: `top: ${y(ry)}`,
+              right: `left: ${x(EDGE.right)}; top: ${y(ry)}`,
+              "foot-left": `right: calc(100% - ${x(rx + 12)}); top: ${y(FOOT)}`,
+              "foot-right": `left: ${x(rx - 12)}; top: ${y(FOOT)}`,
+            }[place];
+            return (
+              <li class:list={[place, { foot: place.startsWith("foot") }]} style={where}>
+                <span class="name"><em>{subjects[i]}</em>{i === 0 && " (major)"}</span>
+              </li>
+            );
+          })
+        }
+      </ul>
+
+      <div class="axis" aria-hidden="true">
+        <span class="spine" style={`top: ${y(BUD[1])}; height: calc(${footRow} - ${y(BUD[1])})`}>
+          <span class="axis-name">Year</span>
+        </span>
+        {
+          ticks.map((t) => (
+            <span class:list={["tick", { long: t.long }]} style={`top: ${t.at}`}>
+              {t.label && <span class="year">{t.label}</span>}
+            </span>
+          ))
+        }
+      </div>
+
+      <ol class="degrees" aria-hidden="true">
+        {
+          brackets.map((d) => (
+            <li>
+              <span class="bracket" style={`top: ${d.top}; height: calc(${d.bottom} - ${d.top})`} />
+              <span class="degree" style={`top: calc((${d.top} + ${d.bottom}) / 2)`}>
+                <span class="title">{d.title}</span>
+                {d.lines.map((l) => <span>{l}</span>)}
+              </span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+    <div class="key"><LeafKey /></div>
+  </div>
+
+  <div class="list visually-hidden"><Education /></div>
+  <div class="list-key"><LeafKey /></div>
+</figure>
+
+<style>
+  .figure { container-type: inline-size; color: var(--pencil); }
+  .chart {
+    --unit: calc(max(min(30.5em, 51svh), 22em) / 1390);
+    --h: calc(var(--px) * var(--unit));
+    --axis: 3.6em;
+    --lcol: 10.8em;
+    --gap: 0.7em;
+    --stem: calc(var(--axis) + 1em + var(--lcol) + var(--gap) + var(--reach-left) * var(--unit));
+    --rcol: 13em;
+    --bracket: calc(var(--stem) + var(--reach-right) * var(--unit) + var(--gap) + var(--rcol));
+    --dcol: 11.6em;
+    --long: 0.7em;
+    width: calc(var(--bracket) + 1.3em + var(--dcol));
+    font-size: clamp(11.5px, 100cqi / 56.6, var(--small));
+  }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .chart { --unit: calc(30.5em / 1390); }
+  }
+  .plate { position: relative; height: calc(var(--h) + 10 * var(--unit) + 1.4em); }
+
+  .paper { position: absolute; top: 0; left: var(--left); width: calc(var(--h) * var(--ratio)); height: var(--h); background: var(--paper); }
+  .paper img { display: block; width: 100%; height: 100%; mix-blend-mode: multiply; }
+
+  .leaders { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% + 40 * var(--unit)); overflow: visible; }
+  line { stroke: var(--pencil); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  circle { fill: var(--ink); }
+
+  em, .title, .axis-name { font-family: var(--serif); font-size: 1.15em; letter-spacing: 0; line-height: 1.15; color: var(--ink); }
+  .labels, .degrees { list-style: none; padding: 0; }
+  .labels li { position: absolute; translate: 0 -50%; display: flex; flex-direction: column; line-height: 1.3; }
+  .labels .left { left: calc(var(--axis) + 1em); width: var(--lcol); text-align: right; }
+  .labels .right { margin-left: var(--gap); width: var(--rcol); }
+  .labels .foot { translate: 0 0; white-space: nowrap; }
+  .labels .foot-left { text-align: right; }
+  .name { color: var(--ink); }
+
+  .axis > span { position: absolute; left: var(--axis); }
+  .spine { border-left: 1px solid var(--pencil); }
+  .axis-name { position: absolute; top: 50%; right: calc(var(--axis) - 1.3em); translate: 50% -50%; rotate: -90deg; }
+  .tick { width: 0.35em; border-top: 1px solid var(--pencil); }
+  .tick.long { width: var(--long); }
+  .year { position: absolute; right: calc(100% + 0.45em); top: 0; translate: 0 -50%; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .bracket { position: absolute; left: var(--bracket); width: var(--long); border: 1px solid var(--pencil); border-left: 0; }
+  .degree {
+    position: absolute;
+    left: calc(var(--bracket) + var(--long) + 0.6em);
+    width: var(--dcol);
+    translate: 0 -50%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+  }
+  .title { margin-bottom: 0.15em; }
+
+  .key { display: flex; justify-content: flex-end; margin-top: 1.4em; }
+  .list-key { display: none; }
+
+  @container (width < 651px) {
+    .chart { width: auto; }
+    .plate { height: auto; }
+    .paper { position: relative; left: auto; margin-inline: auto; width: fit-content; height: auto; }
+    .paper img { width: auto; height: min(486px, calc(40 * var(--u))); }
+    .leaders, .labels, .degrees, .axis, .key { display: none; }
+    .list { position: static; width: auto; height: auto; overflow: visible; clip-path: none; white-space: normal; margin-top: 32px; font-family: var(--serif); font-size: 1rem; letter-spacing: 0; color: var(--ink); }
+    .list-key { display: block; margin-top: 28px; }
+  }
+</style>

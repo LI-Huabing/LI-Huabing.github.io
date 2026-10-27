@@ -1,0 +1,78 @@
+---
+import LegalPage from "../components/LegalPage.astro";
+
+const github = "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement";
+---
+
+<LegalPage
+  title={{ en: "Privacy", de: "Datenschutz" }}
+  description="This website sets no cookies and uses no analytics; its host, GitHub Pages, processes access data."
+>
+  <Fragment slot="en">
+    <p>The controller within the meaning of the GDPR is the person named in the <a href="/imprint/">Imprint</a>.</p>
+    <p>
+      This website sets no cookies, uses no analytics, and loads nothing from other servers. It is hosted on GitHub
+      Pages, a service of GitHub, Inc., USA. When you visit it, GitHub processes your IP address and technical data
+      such as your browser, the page requested, and the time of access, in order to deliver the website and keep it
+      secure. The legal basis is Art. 6(1)(f) GDPR: the legitimate interest in providing this website reliably.
+    </p>
+    <p>
+      GitHub transfers data to the USA under the EU–U.S. Data Privacy Framework and the EU standard contractual
+      clauses. GitHub keeps these logs for security purposes and does not publish a fixed retention period. How GitHub
+      handles this data is set out in the <a href={github}>GitHub General Privacy Statement</a>.
+    </p>
+    <p>
+      If you write to me by email, I use your address and message only to reply, under Art. 6(1)(f) GDPR, and
+      delete them once they are no longer needed for that.
+    </p>
+    <p>
+      You have the right to access your data (Art. 15 GDPR), to have it corrected (Art. 16) or erased
+      (Art. 17), to restrict its processing (Art. 18), and to data portability (Art. 20). To exercise
+      these rights, write to the email address in the <a href="/imprint/">Imprint</a>.
+    </p>
+    <p>
+      <em>Right to object:</em> where your data is processed under Art. 6(1)(f) GDPR, you have the right
+      to object to this processing at any time on grounds relating to your particular situation
+      (Art. 21(1) GDPR).
+    </p>
+    <p>
+      You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR), for example the
+      Hamburg Commissioner for Data Protection and Freedom of Information, Ludwig-Erhard-Straße 22, 20459
+      Hamburg.
+    </p>
+  </Fragment>
+  <Fragment slot="de">
+    <p>Verantwortlicher im Sinne der DSGVO ist die im <a href="/imprint/">Impressum</a> genannte Person.</p>
+    <p>
+      Diese Website setzt keine Cookies, verwendet keine Analysewerkzeuge und lädt nichts von anderen Servern. Sie
+      wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., USA. Beim Aufruf verarbeitet GitHub Ihre
+      IP-Adresse und technische Daten wie den Browser, die aufgerufene Seite und den Zeitpunkt des Zugriffs, um die
+      Website auszuliefern und sicher zu betreiben. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO:
+      das berechtigte Interesse an einer zuverlässigen Bereitstellung dieser Website.
+    </p>
+    <p>
+      GitHub übermittelt Daten in die USA auf Grundlage des Datenschutzrahmens EU-USA (EU-U.S. Data Privacy
+      Framework) und der EU-Standardvertragsklauseln. GitHub speichert diese Protokolle zu Sicherheitszwecken und nennt
+      keine feste Speicherdauer. Wie GitHub mit diesen Daten umgeht, beschreibt die <a href={github}>Datenschutzerklärung von GitHub</a>.
+    </p>
+    <p>
+      Wenn Sie mir eine E-Mail schreiben, verwende ich Ihre Adresse und Nachricht nur, um zu antworten
+      (Art. 6 Abs. 1 lit. f DSGVO), und lösche sie, sobald sie dafür nicht mehr erforderlich sind.
+    </p>
+    <p>
+      Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17),
+      Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Dafür genügt eine E-Mail
+      an die im <a href="/imprint/">Impressum</a> genannte Adresse.
+    </p>
+    <p>
+      <em>Widerspruchsrecht:</em> Soweit Ihre Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+      verarbeitet werden, haben Sie das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit
+      Widerspruch gegen diese Verarbeitung einzulegen (Art. 21 Abs. 1 DSGVO).
+    </p>
+    <p>
+      Außerdem haben Sie das Recht, sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), etwa beim
+      Hamburgischen Beauftragten für Datenschutz und Informationsfreiheit, Ludwig-Erhard-Straße 22, 20459
+      Hamburg.
+    </p>
+  </Fragment>
+</LegalPage>

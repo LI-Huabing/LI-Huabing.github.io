@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  paper: CollectionEntry<"papers">;
+}
+const { paper } = Astro.props;
+const links = Object.entries(paper.data.links);
+---
+
+{
+  links.length > 0 && (
+    <ul class="links link-row meta">
+      {links.map(([label, url]) => (
+        <li>
+          <a href={url}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+<style>
+  .links { margin-top: 0.25em; }
+</style>

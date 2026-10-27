@@ -1,0 +1,31 @@
+---
+import LegalPage from "../components/LegalPage.astro";
+---
+
+<LegalPage
+  title={{ en: "Imprint", de: "Impressum" }}
+  description="Imprint of this website: who is responsible for it and how to get in touch."
+>
+  <Fragment slot="en">
+    <p>Information under § 5 of the German Digital Services Act (Digitale-Dienste-Gesetz, DDG) and § 18(1) of the Interstate Media Treaty (Medienstaatsvertrag, MStV).</p>
+    <address>
+      Huabing Li<br />
+      Institute of Law and Economics, University of Hamburg<br />
+      Alsterterrasse 1<br />
+      20354 Hamburg<br />
+      Germany
+    </address>
+    <p>Email: <a href="mailto:email@huabing.li">email@huabing.li</a></p>
+  </Fragment>
+  <Fragment slot="de">
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 1 Medienstaatsvertrag (MStV).</p>
+    <address>
+      Huabing Li<br />
+      Institut für Recht und Ökonomik, Universität Hamburg<br />
+      Alsterterrasse 1<br />
+      20354 Hamburg<br />
+      Deutschland
+    </address>
+    <p>E-Mail: <a href="mailto:email@huabing.li">email@huabing.li</a></p>
+  </Fragment>
+</LegalPage>

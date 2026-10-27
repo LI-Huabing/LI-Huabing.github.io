@@ -1,0 +1,26 @@
+---
+interface Props {
+  id: string;
+  title: string;
+}
+const { id, title } = Astro.props;
+---
+
+<section class="page" id={id} aria-labelledby={`${id}-title`}>
+  <div class="recede">
+    <h2 class="heading" id={`${id}-title`}>{title}</h2>
+    <div class="body"><slot /></div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: calc(4 * var(--u)) var(--inset) calc(8 * var(--u));
+  }
+  .body { margin-top: calc(4 * var(--u)); }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    section { min-height: 0; padding: 56px var(--gutter) 48px; }
+    .body { margin-top: 32px; }
+  }
+</style>

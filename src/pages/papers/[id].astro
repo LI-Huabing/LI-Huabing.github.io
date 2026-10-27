@@ -1,0 +1,125 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Byline from "../../components/Byline.astro";
+import Honours from "../../components/Honours.astro";
+import PaperFigure from "../../components/PaperFigure.astro";
+import PaperLinks from "../../components/PaperLinks.astro";
+import SubPage from "../../layouts/SubPage.astro";
+import { figureOf } from "../../lib/papers";
+
+export async function getStaticPaths() {
+  return (await getCollection("papers")).map((paper) => ({ params: { id: paper.id }, props: { paper } }));
+}
+
+interface Props {
+  paper: CollectionEntry<"papers">;
+}
+
+const { paper } = Astro.props;
+const { title, workingTitle, abstract, awards, funding, cite, bibtex } = paper.data;
+const { Content } = await render(paper);
+const finding = paper.body?.trim();
+const at = title.search(/[:?]\s/);
+const main = at < 0 ? title : title.slice(0, title[at] === "?" ? at + 1 : at);
+const sub = at < 0 ? undefined : title.slice(at + 1).trim();
+const honoured = awards.length > 0 || funding.length > 0;
+const figure = figureOf(paper);
+---
+
+<SubPage title={title} description={finding || title}>
+  <main>
+    <header>
+      <h1 class:list={["headline", { working: workingTitle }]}>{main}</h1>
+      {sub && <p class="sub">{sub}</p>}
+      {
+        honoured && (
+          <div class="honours">
+            <Honours paper={paper} />
+          </div>
+        )
+      }
+      <Byline paper={paper} />
+      <PaperLinks paper={paper} />
+    </header>
+
+    <div class="split">
+      <div>
+        {
+          finding && (
+            <div class="lead finding">
+              <Content />
+            </div>
+          )
+        }
+        {
+          abstract && (
+            <section class="block" aria-labelledby="abstract">
+              <h2 class="subheading" id="abstract">Abstract</h2>
+              <p class="text">{abstract}</p>
+            </section>
+          )
+        }
+      </div>
+      <div class="side">
+        {
+          figure && (
+            <div class="fig">
+              <PaperFigure svg={figure} />
+            </div>
+          )
+        }
+        <section class="block" aria-labelledby="cite">
+          <h2 class="subheading" id="cite">Cite</h2>
+          {cite && <p class="text" set:html={cite} />}
+          {
+            bibtex && (
+              <details>
+                <summary class="meta">BibTeX</summary>
+                <pre>{bibtex}</pre>
+              </details>
+            )
+          }
+        </section>
+      </div>
+    </div>
+  </main>
+</SubPage>
+
+<style>
+  h1.working { color: var(--pencil); }
+  .sub {
+    max-width: 30em;
+    margin-top: calc(2 * var(--u));
+    font-size: clamp(24px, 2.4 * var(--u), 46px);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+  .honours { margin-top: calc(2 * var(--u)); }
+  .finding :global(p + p) { margin-top: 0.5em; }
+
+  .finding + .block { margin-top: calc(8 * var(--u)); }
+  .fig + .block { margin-top: calc(6 * var(--u)); }
+  .text { font-size: var(--row); line-height: 1.5; hyphens: auto; }
+
+  .fig { width: min(100%, calc(25 * var(--u))); padding-top: calc(0.3 * var(--row)); }
+
+  details { margin-top: 0.8em; }
+  summary { color: var(--pencil); cursor: pointer; }
+  pre {
+    margin-top: 0.6em;
+    font-family: var(--mono);
+    font-size: var(--small);
+    line-height: 1.5;
+    color: var(--pencil);
+    white-space: break-spaces;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .sub { margin-top: 12px; font-size: clamp(20px, 5.4vw, 24px); }
+    .honours { margin-top: 16px; }
+    .side { margin-top: 56px; }
+    .finding + .block, .fig + .block { margin-top: 56px; }
+    .fig { width: min(100%, 400px); padding-top: 0; }
+  }
+</style>

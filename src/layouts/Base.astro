@@ -1,0 +1,37 @@
+---
+import "@fontsource/eb-garamond/latin-400.css";
+import "@fontsource/eb-garamond/latin-400-italic.css";
+import "@fontsource/source-sans-3/latin-400.css";
+import "../styles/global.css";
+import Filters from "../components/Filters.astro";
+import serif from "@fontsource/eb-garamond/files/eb-garamond-latin-400-normal.woff2?url";
+import serifItalic from "@fontsource/eb-garamond/files/eb-garamond-latin-400-italic.woff2?url";
+import sans from "@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2?url";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Huabing Li" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/og.jpg", Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {[serif, serifItalic, sans].map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+  </head>
+  <body>
+    <Filters />
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { listParts } from "../lib/format";
+
+interface Props {
+  paper: CollectionEntry<"papers">;
+}
+const { paper } = Astro.props;
+const { year, journal } = paper.data;
+const coauthors = paper.data.coauthors.filter((a) => a.name !== "Huabing Li");
+const volume = journal?.volume && (journal.issue ? `${journal.volume}(${journal.issue})` : journal.volume);
+const url = new Map(coauthors.map((a) => [a.name, a.url]));
+const status = [volume, journal ? (year ?? "forthcoming") : year]
+  .filter(Boolean)
+  .map((part) => `, ${part}`)
+  .join("");
+---
+
+<p class="by meta">
+  {journal ? <cite>{journal.name}</cite> : "Working paper"}{status}{coauthors.length > 0 && ", with "}{
+    listParts(coauthors.map((a) => a.name)).map((p) => (p.type === "element" && url.get(p.value) ? <a href={url.get(p.value)}>{p.value}</a> : p.value))
+  }
+</p>
+
+<style>
+  .by { margin-top: 0.8em; color: var(--pencil); font-variant-numeric: tabular-nums; }
+  cite { font-family: var(--serif); font-size: 1.15em; letter-spacing: 0; }
+</style>

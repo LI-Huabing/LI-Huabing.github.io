@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import Plant from "./Plant.astro";
+import Section from "./Section.astro";
+
+const awards = (await getCollection("awards")).map((a) => a.data).sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<Section id="cv" title="CV">
+  <div class="cv">
+    <div class="columns">
+      <section aria-labelledby="education">
+        <h3 class="subheading" id="education">Education</h3>
+        <Plant />
+      </section>
+
+      <section aria-labelledby="awards">
+        <h3 class="subheading" id="awards">Awards</h3>
+        <ul class="awards">
+          {
+            awards.map((a) => (
+              <li>
+                <p class="year meta">{a.date.slice(0, 4)}</p>
+                <p class="name">{a.name}</p>
+                <p class="by meta">{a.by}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+    <p class="full"><a href="#">Full CV (PDF)</a></p>
+  </div>
+</Section>
+
+<style>
+  .cv { container-type: inline-size; }
+  .columns { display: grid; grid-template-columns: minmax(0, 2.8fr) minmax(0, 1fr); column-gap: calc(4 * var(--u)); }
+
+  .awards {
+    display: grid;
+    gap: calc(2 * var(--u));
+    list-style: none;
+    padding: 0;
+  }
+  .awards li { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); column-gap: 0.8em; align-items: baseline; }
+  .year { grid-row: span 2; color: var(--pencil); font-variant-numeric: tabular-nums; }
+  .name { font-size: var(--row); line-height: 1.3; }
+  .by { margin-top: 0.2em; color: var(--pencil); }
+
+  .full { margin-top: calc(6 * var(--u)); font-size: var(--row); }
+
+  @container (width < 960px) {
+    .columns { grid-template-columns: 1fr; row-gap: 56px; }
+    .awards { gap: 20px; }
+    .full { margin-top: 56px; }
+  }
+</style>

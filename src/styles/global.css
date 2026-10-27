@@ -1,0 +1,156 @@
+:root {
+  --paper: #f0efeb;
+  --ink: #14202e;
+  --pencil: #3c4858;
+  --accent: #2a598d;
+  --wash: #b4cde5;
+
+  --serif: "EB Garamond", serif;
+  --sans: "Source Sans 3", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --u: clamp(6px, min(1vw, 2svh), 32px);
+  --side: calc((100vw - 100 * var(--u)) / 2);
+  --inset: calc(var(--side) + 6 * var(--u));
+  --gutter: clamp(20px, 6vw, 96px);
+  --aside: calc(15 * var(--u));
+
+  --row: max(1.45 * var(--u), 1.125rem);
+
+  --small: max(1.05 * var(--u), 0.875rem);
+}
+
+@media (max-aspect-ratio: 5/4), (max-width: 760px) {
+  :root { --row: 1.125rem; --small: 0.9375rem; }
+}
+@media (max-width: 600px) {
+  :root { --gutter: 20px; }
+}
+
+* { margin: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection { background: rgb(60 72 88 / 0.2); color: var(--ink); }
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: max(1px, 0.06em);
+  text-underline-offset: 0.22em;
+  text-decoration-color: rgb(42 89 141 / 0.4);
+}
+a:hover, a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.page {
+  min-height: 100svh;
+  view-timeline-name: --page;
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) and (aspect-ratio > 5/4) and (width > 760px) {
+    .recede {
+      animation: recede linear both;
+      animation-timeline: --page;
+      animation-range: exit 0% exit 85%;
+    }
+  }
+}
+
+@keyframes recede {
+  to { translate: 0 6svh; opacity: 0; }
+}
+
+h1, h2, h3 { font-weight: 400; }
+
+.subheading {
+  margin-bottom: calc(2 * var(--u));
+  font-size: clamp(24px, 2.4 * var(--u), 46px);
+  font-style: italic;
+  line-height: 1.15;
+  scroll-margin-top: 10vh;
+}
+
+.heading {
+  font-size: clamp(28px, 3.3 * var(--u), 64px);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+}
+
+.headline {
+  font-size: clamp(44px, 5.5 * var(--u), 140px);
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, calc(30 * var(--row))) minmax(calc(25 * var(--u)), 1fr);
+  column-gap: calc(8 * var(--u));
+  align-items: start;
+  margin-top: calc(6 * var(--u));
+}
+
+.lead { font-size: max(1.7 * var(--u), 1.0625rem); line-height: 1.45; text-wrap: pretty; }
+
+@media (max-aspect-ratio: 5/4), (max-width: 760px) {
+  .heading { font-size: 34px; }
+  .headline { font-size: clamp(22px, (100vw - 2 * var(--gutter)) * 0.082, 40px); line-height: 1.05; }
+  .split { display: block; margin-top: 32px; }
+  .lead { font-size: 1.25rem; }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.meta {
+  font-family: var(--sans);
+  font-size: var(--small);
+  letter-spacing: 0.01em;
+}
+
+.contents { display: flex; gap: 1.6em; }
+.contents a { text-decoration-line: none; }
+.contents a:hover, .contents a:focus-visible { text-decoration-line: underline; }
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.5em;
+  list-style: none;
+  padding: 0;
+}
+
+@media (forced-colors: active) {
+  * { mix-blend-mode: normal !important; }
+  svg[role="img"] { forced-color-adjust: none; background: var(--paper); }
+}

@@ -1,0 +1,119 @@
+- id: emle-2024
+  date: 2024-02
+  event: EMLE Midterm Meeting 2024
+  host: Erasmus University Rotterdam
+  city: Rotterdam
+  lat: 51.918
+  lon: 4.525
+
+- id: aede-2024
+  date: 2024-06
+  event: 14th Annual Conference of the Spanish Association of Law and Economics
+  host: Pompeu Fabra University
+  city: Barcelona
+  lat: 41.390
+  lon: 2.190
+
+- id: side-2024
+  date: 2024-12
+  event: 20th Annual Conference of the Italian Society of Law and Economics
+  host: Sapienza University of Rome
+  city: Rome
+  lat: 41.903
+  lon: 12.515
+
+- id: edle-2025-03
+  date: 2025-03
+  event: EDLE Workshop
+  host: University of Bologna
+  city: Bologna
+  lat: 44.496
+  lon: 11.353
+
+- id: edle-2025-06
+  date: 2025-06
+  event: EDLE Workshop
+  host: University of Hamburg
+  city: Hamburg
+  lat: 53.567
+  lon: 9.984
+
+- id: judging-2025
+  date: 2025-06
+  event: Fresh Perspectives on Judging Symposium
+  host: University College London
+  city: London
+  lat: 51.525
+  lon: -0.134
+
+- id: glea-2025
+  date: 2025-07
+  event: 22nd Annual Meeting of the German Law and Economics Association
+  host: University of Bonn
+  city: Bonn
+  lat: 50.734
+  lon: 7.103
+
+- id: aslea-2025
+  date: 2025-08
+  event: 20th Annual Conference of the Asian Law and Economics Association
+  host: City University of Hong Kong
+  city: Hong Kong
+  lat: 22.336
+  lon: 114.173
+
+- id: edle-2025-10
+  date: 2025-10
+  event: EDLE Workshop
+  host: Erasmus University Rotterdam
+  city: Rotterdam
+  lat: 51.918
+  lon: 4.525
+
+- id: side-2025
+  date: 2025-12
+  event: 21st Annual Conference of the Italian Society of Law and Economics
+  host: University of Catania
+  city: Catania
+  lat: 37.503
+  lon: 15.087
+
+- id: emle-2026
+  date: 2026-02
+  event: EMLE Midterm Meeting 2026
+  host: University of Hamburg
+  city: Hamburg
+  lat: 53.567
+  lon: 9.984
+
+- id: edle-2026-03
+  date: 2026-03
+  event: EDLE Workshop
+  host: Erasmus University Rotterdam
+  city: Rotterdam
+  lat: 51.918
+  lon: 4.525
+
+- id: icle-2026
+  date: 2026-07
+  event: "12th International Conference on Law and Economics: Symposium of Empirical Legal Studies"
+  host: China University of Political Science and Law
+  city: Beijing
+  lat: 39.958
+  lon: 116.346
+
+- id: glea-2026
+  date: 2026-07
+  event: 23rd Annual Meeting of the German Law and Economics Association
+  host: Max Planck Institute for the Study of Crime, Security and Law
+  city: Freiburg
+  lat: 47.981
+  lon: 7.851
+
+- id: edle-2026-11
+  date: 2026-11
+  event: EDLE Workshop
+  host: University of Bologna
+  city: Bologna
+  lat: 44.496
+  lon: 11.353

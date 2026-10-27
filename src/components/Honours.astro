@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { list } from "../lib/format";
+
+interface Props {
+  paper: CollectionEntry<"papers">;
+}
+const { paper } = Astro.props;
+const { awards, funding } = paper.data;
+
+const honours = [
+  ...awards.map((text) => ({ text, grant: false })),
+  ...(funding.length > 0 ? [{ text: `Funded by ${list(funding)}`, grant: true }] : []),
+];
+
+const jitter = (k: number) => (Math.random() - 0.5) * k;
+
+function band(grant: boolean) {
+  const f = (n: number) => n.toFixed(2);
+
+  const tilt = 0.6 + jitter(0.8);
+  const slant = 1.1 + jitter(0.5);
+  const t0 = 2.6 + jitter(1.2), t1 = t0 - tilt;
+  const b0 = 18 + jitter(1.2), b1 = b0 - tilt;
+  const x0 = jitter(1.2), x1 = 100 + jitter(1.4);
+
+  const outline =
+    `M${f(x0 + slant)} ${f(t0)} Q50 ${f((t0 + t1) / 2 + jitter(1))} ${f(x1)} ${f(t1)}` +
+    ` Q${f(x1 - slant / 2 + 0.35)} ${f((t1 + b1) / 2)} ${f(x1 - slant)} ${f(b1)}` +
+    ` Q50 ${f((b0 + b1) / 2 + jitter(1))} ${f(x0)} ${f(b0)}` +
+    ` Q${f(x0 + slant / 2 - 0.35)} ${f((t0 + b0) / 2)} ${f(x0 + slant)} ${f(t0)} Z`;
+  const landing = `M${f(x0 + slant)} ${f(t0)} L${f(x0 + slant + 1.6 + jitter(0.6))} ${f(t0)} L${f(x0 + 1.6 + jitter(0.6))} ${f(b0)} L${f(x0)} ${f(b0)} Z`;
+  const streaks = [t0 + 4.5 + jitter(2), b0 - 4 + jitter(2)].map(
+    (y) => `M${f(x0 + 3 + jitter(2))} ${f(y)} Q50 ${f(y - tilt / 2 + jitter(0.6))} ${f(x1 - 4 + jitter(3))} ${f(y - tilt + jitter(0.4))}`,
+  );
+  const fill = grant ? "#d0a760" : "#b4cde5";
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none">` +
+    `<path d="${outline}" fill="${fill}" fill-opacity="0.72"/>` +
+    `<path d="${landing}" fill="${fill}" fill-opacity="0.3"/>` +
+    streaks.map((d) => `<path d="${d}" fill="none" stroke="#f0efeb" stroke-opacity="0.35" stroke-width="1"/>`).join("") +
+    `</svg>`;
+  return `--band: url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+}
+---
+
+{honours.map((h) => <p class="honour meta"><span class="ink" style={band(h.grant)}>{h.text}</span></p>)}
+
+<style>
+  .honour {
+    width: fit-content;
+    margin-top: 0.6em;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+  .honour + .honour { margin-top: 0.14em; }
+
+  .ink {
+    padding: 0 0.31em;
+    margin: 0 -0.31em;
+    background: var(--band) 0 0 / 100% 100% no-repeat;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    mix-blend-mode: multiply;
+  }
+</style>

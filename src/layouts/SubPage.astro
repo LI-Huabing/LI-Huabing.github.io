@@ -1,0 +1,53 @@
+---
+import Footer from "../components/Footer.astro";
+import Base from "./Base.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+const { title, description } = Astro.props;
+---
+
+<Base title={`${title} · Huabing Li`} description={description}>
+  <div class="sheet">
+    <header class="top">
+      <a class="home" href="/">Huabing Li</a>
+      <nav class="contents meta" aria-label="Sections">
+        <a href="/#cv">CV</a>
+        <a href="/#research">Research</a>
+        <a href="/#talks">Talks</a>
+      </nav>
+    </header>
+    <slot />
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+  }
+  .sheet > :global(main) {
+    flex-grow: 1;
+    padding: calc(6 * var(--u)) var(--inset) calc(8 * var(--u));
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.6em;
+    padding: max(24px, 3 * var(--u)) var(--inset) 0;
+  }
+  .home { font-size: calc(2.4 * var(--u)); font-style: italic; text-decoration-line: none; }
+  .home:hover, .home:focus-visible { text-decoration-line: underline; }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .sheet > :global(main) { padding: 48px var(--gutter) 56px; }
+    .top { padding: 24px var(--gutter) 0; }
+    .home { font-size: clamp(21px, 22vw - 49px, 26px); }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import { monthYear } from "../lib/format";
+
+const built = new Date();
+---
+
+<footer class="close">
+  <p class="name">Huabing Li</p>
+  <div class="end">
+    <p class="legal meta"><a href="/imprint/">Imprint / <span lang="de">Impressum</span></a><a href="/privacy/">Privacy / <span lang="de">Datenschutz</span></a></p>
+    <p class="colophon meta">© {built.getUTCFullYear()} Huabing Li. Updated {monthYear.format(built)}.</p>
+  </div>
+</footer>
+
+<style>
+  .close {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: end;
+    column-gap: calc(6 * var(--u));
+    padding: calc(4 * var(--u)) var(--inset) calc(6 * var(--u));
+  }
+  .name {
+    font-size: clamp(48px, 5.5 * var(--u), 140px);
+    font-style: italic;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-box: trim-both cap alphabetic;
+  }
+  .end {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.9em;
+  }
+  .legal, .colophon { text-box: trim-both cap alphabetic; }
+  .legal a + a { margin-left: 1.5em; }
+  .colophon { color: var(--pencil); }
+
+  @supports not (text-box: trim-both cap alphabetic) {
+    .close { align-items: last baseline; }
+    .end { align-self: last baseline; }
+  }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .close { grid-template-columns: minmax(0, 1fr); row-gap: 36px; padding: 32px var(--gutter) 48px; }
+    .name { font-size: 48px; }
+    .end { align-items: flex-start; gap: 16px; }
+    .legal { display: flex; flex-wrap: wrap; gap: 0.6em 1.5em; }
+    .legal a { white-space: nowrap; }
+    .legal a + a { margin-left: 0; }
+  }
+</style>

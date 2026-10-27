@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import CV from "../components/CV.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Research from "../components/Research.astro";
+import Talks from "../components/Talks.astro";
+---
+
+<Base
+  title="Huabing Li"
+  description="Huabing Li studies the incidence of digital technology in law: who really gains, who really pays, and how law should respond."
+>
+  <div class="home">
+    <main>
+      <Hero />
+      <CV />
+      <Research />
+      <Talks />
+    </main>
+    <Footer />
+  </div>
+</Base>
+
+<style>
+  @media (aspect-ratio > 5/4) and (width > 760px) {
+    .home { display: grid; grid-template-rows: auto auto auto 1fr auto; }
+    main { grid-row: 1 / 5; grid-column: 1; display: grid; grid-template-rows: subgrid; }
+    main > :global(.page:last-child) { min-height: 0; }
+    .home > :global(footer) { grid-row: 5; grid-column: 1; }
+    .home::after {
+      content: "";
+      grid-row: 4 / 6;
+      grid-column: 1;
+      min-height: 100svh;
+      pointer-events: none;
+    }
+  }
+</style>

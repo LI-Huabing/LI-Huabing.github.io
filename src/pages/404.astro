@@ -1,0 +1,75 @@
+---
+import SubPage from "../layouts/SubPage.astro";
+---
+
+<SubPage title="Page not found" description="There is nothing at this address.">
+  <main>
+    <h1 class="headline">Page not found</h1>
+
+    <div class="split">
+      <p class="lead">
+        There is nothing at this address. Everything that grew here is on the <a href="/">home page</a>:{" "}
+        <a href="/#cv">CV</a>, <a href="/#research">Research</a>, and <a href="/#talks">Talks</a>.
+      </p>
+
+      <figure class="specimen meta" aria-hidden="true">
+        <div class="plate">
+          <img
+            src="/images/leaf-fallen-515.webp"
+            srcset="/images/leaf-fallen-256.webp 256w, /images/leaf-fallen-515.webp 515w"
+            sizes="(max-aspect-ratio: 5/4) min(100vw, 400px), (max-width: 760px) min(100vw, 400px), 25vw"
+            width="515"
+            height="369"
+            alt=""
+          />
+          <span class="leader"></span>
+        </div>
+        <figcaption class="label">
+          <span class="name"><em>This page</em>, 404</span>
+          <span>Fallen, or never grew here</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+</SubPage>
+
+<style>
+  .specimen {
+    --dot-x: 45%;
+    width: min(100%, calc(25 * var(--u)));
+    padding-top: calc(0.3 * var(--row));
+    color: var(--pencil);
+  }
+  .plate { position: relative; }
+  img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+  .leader {
+    position: absolute;
+    left: var(--dot-x);
+    top: 47%;
+    bottom: -0.7em;
+    border-left: 1px solid var(--pencil);
+  }
+  .leader::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    top: -3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .label {
+    display: flex;
+    flex-direction: column;
+    margin: 0.7em 0 0 calc(var(--dot-x) - 0.45em);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  .name { color: var(--ink); }
+  em { font-family: var(--serif); font-size: 1.15em; letter-spacing: 0; }
+
+  @media (max-aspect-ratio: 5/4), (max-width: 760px) {
+    .specimen { width: min(100%, 400px); margin-top: 56px; padding-top: 0; }
+  }
+</style>

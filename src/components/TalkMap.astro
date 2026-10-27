@@ -1,0 +1,199 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { FLOWER_RADIUS, HIT_BOX, hitAreas, liftOf, type Flower } from "../lib/flowers";
+import { monthYear } from "../lib/format";
+import { LEAF_ASPECTS, leafFor, leafSize, leafSrc } from "../lib/leaves";
+import type { TalkMap } from "../lib/talk-map";
+
+type Talk = CollectionEntry<"talks">["data"] & { id: string };
+
+interface Props {
+  map: TalkMap;
+  flowers: Flower<Talk>[];
+}
+const { map, flowers } = Astro.props;
+
+const hits = hitAreas(flowers);
+const pct = (n: number) => `${(n * 100).toFixed(2)}%`;
+const wash = `map-wash-${map.name}`;
+const fade = `map-fade-${map.name}`;
+const FEATHER = 6;
+---
+
+<div class="map" style={`--unit: ${100 / map.width}cqw; --radius: ${FLOWER_RADIUS}; --box: ${HIT_BOX}`}>
+  <svg viewBox={map.viewBox} aria-hidden="true">
+    <filter id={wash} x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="5" result="blooms" />
+      <feDisplacementMap in="SourceGraphic" in2="blooms" scale="7" xChannelSelector="R" yChannelSelector="G" result="edge" />
+      <feColorMatrix in="blooms" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0 0 0 0.4" result="density" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="grain" />
+      <feColorMatrix in="grain" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.9 0 0 0 0.55" result="tooth" />
+      <feComposite in="edge" in2="density" operator="in" result="settled" />
+      <feComposite in="settled" in2="tooth" operator="in" />
+      <feGaussianBlur stdDeviation="0.4" />
+    </filter>
+    {
+      map.cropped && (
+        <mask id={fade} maskUnits="userSpaceOnUse" x={map.left} y={map.top} width={map.width} height={map.height}>
+          <filter id={`${fade}-edge`}>
+            <feGaussianBlur stdDeviation={FEATHER} />
+          </filter>
+          <rect
+            x={map.left + 2 * FEATHER}
+            y={map.top + 2 * FEATHER}
+            width={map.width - 4 * FEATHER}
+            height={map.height - 4 * FEATHER}
+            fill="#fff"
+            filter={`url(#${fade}-edge)`}
+          />
+        </mask>
+      )
+    }
+    <path class="land" d={map.landPath} filter={`url(#${wash})`} mask={map.cropped ? `url(#${fade})` : undefined} />
+    {
+      flowers.map((f) => (
+        <g>
+          <path class="stem" d={f.stem} />
+          <circle class="root" cx={f.root[0].toFixed(1)} cy={f.root[1].toFixed(1)} r="1.5" />
+        </g>
+      ))
+    }
+  </svg>
+
+  <ul class="flowers">
+    {
+      flowers.map((f, i) => {
+        const x = (f.at[0] - map.left) / map.width;
+        const y = (f.at[1] - map.top) / map.height;
+        return (
+          <li
+            class:list={["flower", { single: f.talks.length === 1, west: x > 0.5, low: y > 0.65 }]}
+            style={`left: ${pct(x)}; top: ${pct(y)}; --x: ${x.toFixed(3)}; --lift: ${liftOf(f)}`}
+          >
+            <ul>
+              {f.talks.map((t, k) => {
+                const leaf = leafFor(t.date);
+                return (
+                  <li
+                    class="talk"
+                    style={`--turn: ${f.petals[k].toFixed(1)}deg; --aspect: ${LEAF_ASPECTS[leaf]}; --hit-fine: ${hits[i][k].fine}; --hit-coarse: ${hits[i][k].coarse}`}
+                  >
+                    <button class="petal" type="button" aria-describedby={`talk-${map.name}-${t.id}`}>
+                      <span class="hit" aria-hidden="true" />
+                      <span class="visually-hidden">{t.event}</span>
+                      <img src={leafSrc(leaf)} {...leafSize(leaf)} alt="" />
+                    </button>
+                    <div class="card" id={`talk-${map.name}-${t.id}`} role="tooltip">
+                      <p class="event">{t.event}</p>
+                      <p class="meta where">{t.host}, {t.city}</p>
+                      <p class="meta">{monthYear.format(t.date)}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .map { position: relative; container-type: inline-size; }
+  .map > svg { display: block; width: 100%; height: auto; }
+
+  .land {
+    fill: var(--wash);
+    stroke: #9ebad9;
+    stroke-width: 1.2;
+    stroke-opacity: 0.7;
+  }
+  .stem { fill: var(--pencil); }
+  .root { fill: var(--ink); }
+
+  .flowers, .flowers ul { list-style: none; padding: 0; }
+  .flower { position: absolute; width: 0; height: 0; }
+  .flower:hover, .flower:focus-within { z-index: 1; }
+  .talk { position: absolute; }
+
+  .petal {
+    position: absolute;
+    left: calc(-8.5 * var(--aspect) * var(--unit));
+    top: calc(-9.75 * var(--unit));
+    width: calc(17 * var(--aspect) * var(--unit));
+    height: calc(19.5 * var(--unit));
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transform: rotate(var(--turn)) translateY(calc(-1 * var(--lift) * var(--unit)));
+    pointer-events: none;
+  }
+
+  .hit { position: absolute; left: 50%; top: calc(50% + var(--lift) * var(--unit)); rotate: calc(-1 * var(--turn)); }
+  .hit::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * var(--box) * var(--unit));
+    top: calc(-1 * var(--box) * var(--unit));
+    width: calc(2 * var(--box) * var(--unit));
+    height: calc(2 * var(--box) * var(--unit));
+    clip-path: var(--hit-fine);
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  @media (pointer: coarse) {
+    .hit::before { clip-path: var(--hit-coarse); }
+  }
+  .petal img { position: absolute; top: 0; left: 0; width: 100%; height: calc(17 * var(--unit)); transition: filter 150ms; }
+
+  .petal::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 0.25 * var(--unit));
+    width: calc(0.5 * var(--unit));
+    height: calc(2.9 * var(--unit));
+    border-radius: 1px;
+    background: var(--pencil);
+  }
+
+  .petal:hover img, .petal:focus-visible img { filter: brightness(0.86) saturate(1.15); }
+  .petal:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+  .petal:focus-visible::after { background: var(--ink); }
+
+  .single .petal::after { display: none; }
+
+  .card {
+    position: absolute;
+    left: calc((var(--radius) + 3) * var(--unit));
+    top: -1.1em;
+    width: max-content;
+    max-width: min(20em, calc((1 - var(--x)) * 100cqw - (var(--radius) + 3) * var(--unit)));
+    padding: 0.8em 1em 0.85em;
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgb(20 32 46 / 0.08), 0 6px 20px rgb(20 32 46 / 0.1);
+    font-size: var(--small);
+    line-height: 1.4;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 150ms, visibility 0s 150ms;
+    pointer-events: none;
+  }
+  .west .card {
+    left: auto;
+    right: calc((var(--radius) + 3) * var(--unit));
+    max-width: min(20em, calc(var(--x) * 100cqw - (var(--radius) + 3) * var(--unit)));
+  }
+  .low .card { top: auto; bottom: -1.1em; }
+  .talk:hover .card, .talk:focus-within .card {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 150ms;
+  }
+
+  .event { font-size: var(--row); line-height: 1.3; color: var(--ink); }
+  .where { margin-top: 0.4em; }
+  .meta { color: var(--pencil); }
+</style>

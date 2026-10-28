@@ -16,7 +16,7 @@ interface Props {
 }
 
 const { paper } = Astro.props;
-const { title, workingTitle, abstract, awards, funding, cite, bibtex } = paper.data;
+const { title, abstract, awards, funding, cite, bibtex } = paper.data;
 const { Content } = await render(paper);
 const finding = paper.body?.trim();
 const at = title.search(/[:?]\s/);
@@ -29,7 +29,7 @@ const figure = figureOf(paper);
 <SubPage title={title} description={finding || title}>
   <main>
     <header>
-      <h1 class:list={["headline", { working: workingTitle }]}>{main}</h1>
+      <h1 class="headline">{main}</h1>
       {sub && <p class="sub">{sub}</p>}
       {
         honoured && (
@@ -86,7 +86,6 @@ const figure = figureOf(paper);
 </SubPage>
 
 <style>
-  h1.working { color: var(--pencil); }
   .sub {
     max-width: 30em;
     margin-top: calc(2 * var(--u));

@@ -16,7 +16,7 @@ const figure = figureOf(paper);
 
 <li class="paper">
   <div class="text">
-    <p class:list={["title", { working: paper.data.workingTitle }]}><a href={pageOf(paper)}>{paper.data.title}</a></p>
+    <p class="title"><a href={pageOf(paper)}>{paper.data.title}</a></p>
     <Honours paper={paper} />
     {
       paper.body?.trim() && (
@@ -47,7 +47,6 @@ const figure = figureOf(paper);
   .paper + .paper { margin-top: calc(6 * var(--u)); }
 
   .title { font-size: var(--row); font-style: italic; line-height: 1.35; }
-  .title.working { color: var(--pencil); }
 
   .finding { margin-top: 0.5em; font-size: var(--row); line-height: 1.5; color: var(--pencil); text-wrap: pretty; }
   .finding :global(p + p) { margin-top: 0.5em; }

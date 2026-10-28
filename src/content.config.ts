@@ -6,7 +6,6 @@ const papers = defineCollection({
   loader: glob({ base: "src/content/papers", pattern: "*/index.md", generateId: ({ entry }) => entry.split("/")[0] }),
   schema: z.object({
     title: z.string(),
-    workingTitle: z.boolean().default(false),
     group: z.string(),
     order: z.number(),
     year: z.union([z.number(), z.string()]).optional(),

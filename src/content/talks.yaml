@@ -14,14 +14,6 @@
   lat: 41.390
   lon: 2.190
 
-- id: side-2024
-  date: 2024-12
-  event: 20th Annual Conference of the Italian Society of Law and Economics
-  host: Sapienza University of Rome
-  city: Rome
-  lat: 41.903
-  lon: 12.515
-
 - id: edle-2025-03
   date: 2025-03
   event: EDLE Workshop

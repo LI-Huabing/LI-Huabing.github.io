@@ -1,14 +1,13 @@
 ---
-title: "Working title to come: an empirical study of China’s digital court construction"
-workingTitle: true
+title: "Working Title to Come: An Empirical Study of China’s Digital Court Construction"
 group: respond
 order: 2
 year: expected 2027
-cite: "Li, Huabing. “Working title to come: an empirical study of China’s digital court construction.” Working paper, expected 2027."
+cite: "Li, Huabing. “Working Title to Come: An Empirical Study of China’s Digital Court Construction.” Working paper, expected 2027."
 bibtex: |-
   @unpublished{lidigitalcourts,
     author = {Li, Huabing},
-    title = {{Working title to come: an empirical study of China’s digital court construction}},
+    title = {{Working Title to Come: An Empirical Study of China’s Digital Court Construction}},
     note = {Working paper, expected 2027}
   }
 ---

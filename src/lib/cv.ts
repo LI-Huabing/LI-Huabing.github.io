@@ -14,13 +14,13 @@ export const bachelor = {
 };
 
 export const subjects = ["Economics", "Law", "Computer Science", "Finance"];
-export const minors = `Minors in ${list(subjects.slice(1))}`;
+export const minors = `Minor degrees in ${list(subjects.slice(1))}`;
 
 let leaf = 0;
 export const degrees = [
   {
     degree: "European Master in Law and Economics",
-    detail: "Joint LLM, Erasmus Mundus",
+    detail: "LLM, Erasmus Mundus",
     from: "2023-10",
     to: "2024-07",
     stops: [
@@ -31,7 +31,7 @@ export const degrees = [
   },
   {
     degree: "European Doctorate in Law and Economics",
-    detail: "Joint PhD",
+    detail: "PhD",
     from: "2024-10",
     stops: [
       { city: "Bologna", from: "2024-10", school: "University of Bologna" },
